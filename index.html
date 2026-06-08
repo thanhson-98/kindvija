@@ -270,6 +270,15 @@ body { font-family: var(--font); color: var(--dark); background: var(--white); l
 .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(220,38,38,0.55); }
 .hero-cta svg { width: 20px; height: 20px; animation: bounce-right 1.5s infinite; }
 
+@media (min-width: 769px) {
+  .hero-salary {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @keyframes bounce-right {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(5px); }
