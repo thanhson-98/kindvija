@@ -66,12 +66,6 @@ body { font-family: var(--font); color: var(--dark); background: var(--white); l
   object-position: center 20%;
 }
 
-@media (max-width: 768px) {
-  .hero-bg img {
-    object-position: center center;
-  }
-}
-
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -83,6 +77,64 @@ body { font-family: var(--font); color: var(--dark); background: var(--white); l
     rgba(0,0,0,0.5) 65%,
     rgba(0,0,0,0.85) 100%
   );
+}
+
+@media (max-width: 768px) {
+  .hero-bg img {
+    object-position: center 38%;
+  }
+
+  .hero-bg::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.08) 0%,
+      rgba(0,0,0,0) 42%,
+      rgba(0,0,0,0.35) 62%,
+      rgba(0,0,0,0.9) 100%
+    );
+  }
+
+  .hero-content {
+    padding: 16px 16px 28px;
+    width: 100%;
+    max-height: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: clamp(21px, 5.8vw, 26px);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .hero-salary {
+    padding: 10px 18px;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+
+  .hero-salary .amount {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .hero-cta {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
 }
 
 .hero-content {
