@@ -38,6 +38,34 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { font-family: var(--font); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
 /* ═══ HERO ═══ */
+/* ═══ BRAND LOGO ═══ */
+.site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.site-header .brand-logo {
+  height: 38px; width: auto;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.45));
+}
+.site-header .header-cta {
+  font-size: 13px; font-weight: 700; color: #fff; text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  padding: 7px 16px; border-radius: 50px;
+  backdrop-filter: blur(6px);
+  transition: background .15s;
+}
+.site-header .header-cta:hover { background: rgba(255,255,255,0.15); }
+.footer-logo { height: 46px; width: auto; margin: 0 auto 12px; display: block; }
+@media (max-width: 768px) {
+  .site-header { padding: 14px 16px; }
+  .site-header .brand-logo { height: 34px; }
+}
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -800,6 +828,10 @@ select.form-input {
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="top">
+  <header class="site-header">
+    <img class="brand-logo" src="logo-white.png" alt="SAKURA DRIVE">
+    <a href="#form" class="header-cta">Đăng ký</a>
+  </header>
   <div class="hero-bg">
     <picture>
       <source media="(max-width: 768px)" srcset="hero-portrait.jpg">
@@ -812,7 +844,7 @@ select.form-input {
       Đang tuyển dụng 2026
     </div>
     <h1>Lái Xe Tải Tại <span class="highlight">Nhật Bản</span><br>Thu Nhập Cao — Cuộc Sống Tốt</h1>
-    <p class="hero-sub">Cơ hội vàng cho tài xế Việt Nam: lương gấp 10 lần, chỗ ở miễn phí, hỗ trợ visa toàn bộ.</p>
+    <p class="hero-sub">Cơ hội vàng cho tài xế Việt Nam: lương cao, tăng đều mỗi năm, chỗ ở miễn phí, hỗ trợ visa toàn bộ.</p>
     <div class="hero-salary">
       <span class="amount">40–70 triệu</span>
       <span class="unit">VNĐ/tháng<br><small style="opacity:0.7">≈ ¥240–420K</small></span>
@@ -1103,6 +1135,9 @@ select.form-input {
             <option value="N2-N1">N2/N1 — Nâng cao</option>
           </select>
         </div>
+        <!-- honeypot: bots fill this, humans never see it -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0">
+        <p class="form-error" id="formError" style="display:none;color:var(--red);font-size:14px;margin:0 0 12px;text-align:center"></p>
         <button type="submit" class="form-submit" id="submitBtn">GỬI ĐĂNG KÝ NGAY</button>
       </form>
       <p class="form-note">
@@ -1129,7 +1164,7 @@ select.form-input {
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
-  <div class="footer-brand">SAKURA DRIVE</div>
+  <img class="footer-logo" src="logo-white.png" alt="SAKURA DRIVE">
   <p>Kết nối tài xế Việt Nam với cơ hội tại Nhật Bản</p>
   <p style="margin-top:10px">© 2026 Sakura Drive. All rights reserved.</p>
 </footer>
@@ -1177,19 +1212,69 @@ function toggleFaq(el) {
   }
 }
 
-function handleSubmit(e) {
+// ── Backend endpoint ──
+// Same-origin default (works when the backend also serves this page).
+// If the LP is hosted separately, set window.KINDVIJA_API to the full URL
+// in its own script tag placed before this one, e.g.:
+//   window.KINDVIJA_API = 'https://your-api.com/api/leads'
+const API_ENDPOINT = window.KINDVIJA_API || '/api/leads';
+
+function showFormError(msg) {
+  const el = document.getElementById('formError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+function clearFormError() {
+  const el = document.getElementById('formError');
+  el.style.display = 'none';
+  el.textContent = '';
+}
+
+async function handleSubmit(e) {
   e.preventDefault();
+  const form = document.getElementById('contactForm');
   const btn = document.getElementById('submitBtn');
+  const originalLabel = btn.textContent;
+
+  // Honeypot: if filled, it's a bot — pretend success, send nothing.
+  if (form.website && form.website.value) {
+    document.getElementById('successOverlay').classList.add('show');
+    form.reset();
+    return;
+  }
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  delete data.website;
+
+  // Attach tracking context (useful for ad attribution)
+  const params = new URLSearchParams(location.search);
+  data.utm_source   = params.get('utm_source')   || '';
+  data.utm_medium   = params.get('utm_medium')   || '';
+  data.utm_campaign = params.get('utm_campaign') || '';
+  data.page_url     = location.href;
+
+  clearFormError();
   btn.textContent = 'Đang gửi...';
   btn.disabled = true;
   btn.style.opacity = '0.7';
-  setTimeout(() => {
+
+  try {
+    const res = await fetch(API_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+
     document.getElementById('successOverlay').classList.add('show');
-    document.getElementById('contactForm').reset();
-    btn.textContent = 'GỬI ĐĂNG KÝ NGAY';
+    form.reset();
+  } catch (err) {
+    showFormError('Gửi không thành công. Vui lòng kiểm tra kết nối và thử lại.');
+  } finally {
+    btn.textContent = originalLabel;
     btn.disabled = false;
     btn.style.opacity = '1';
-  }, 1200);
+  }
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
