@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuyển Tài Xế Xe Tải Tại Nhật Bản | SAKURA DRIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #DC2626;
+  --red-dark: #B91C1C;
+  --red-light: #FEE2E2;
+  --blue: #1E40AF;
+  --blue-dark: #1E3A8A;
+  --blue-light: #DBEAFE;
+  --gold: #F59E0B;
+  --gold-light: #FEF3C7;
+  --dark: #111827;
+  --gray-900: #1F2937;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-100: #F3F4F6;
+  --white: #FFFFFF;
+  --font: 'Be Vietnam Pro', sans-serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.2);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: var(--font); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+/* ═══ HERO ═══ */
+/* ═══ BRAND LOGO ═══ */
+.site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.site-header .brand-logo {
+  height: 38px; width: auto;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.45));
+}
+.site-header .header-cta {
+  font-size: 13px; font-weight: 700; color: #fff; text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  padding: 7px 16px; border-radius: 50px;
+  backdrop-filter: blur(6px);
+  transition: background .15s;
+}
+.site-header .header-cta:hover { background: rgba(255,255,255,0.15); }
+.footer-logo { height: 46px; width: auto; margin: 0 auto 12px; display: block; }
+@media (max-width: 768px) {
+  .site-header { padding: 14px 16px; }
+  .site-header .brand-logo { height: 34px; }
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.15) 30%,
+    rgba(0,0,0,0.5) 65%,
+    rgba(0,0,0,0.85) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100svh;
+    background: var(--dark);
+  }
+
+  .hero-bg {
+    position: relative;
+    flex: 0 0 54svh;
+    height: 54svh;
+    inset: auto;
+  }
+
+  .hero-bg img {
+    object-position: center 22%;
+  }
+
+  .hero-bg::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.05) 0%,
+      rgba(0,0,0,0) 55%,
+      var(--dark) 100%
+    );
+  }
+
+  .hero-content {
+    flex: 1;
+    width: 100%;
+    max-height: none;
+    margin-top: 0;
+    padding: 16px 16px max(24px, env(safe-area-inset-bottom));
+    background: var(--dark);
+    display: block;
+  }
+
+  .hero-badge {
+    position: static;
+    transform: none;
+    display: inline-flex;
+    font-size: 11px;
+    padding: 6px 14px;
+    margin: 0 auto 12px;
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .hero h1 {
+    font-size: clamp(20px, 5.5vw, 24px);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .hero-salary {
+    padding: 10px 16px;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+
+  .hero-salary .amount {
+    font-size: clamp(24px, 6.5vw, 32px);
+  }
+
+  .hero-cta {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px 32px;
+  color: var(--white);
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 7px 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s ease-out;
+}
+
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  background: #34D399;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero h1 {
+  font-size: clamp(26px, 7vw, 50px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s ease-out 0.1s both;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--gold), #FBBF24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(14px, 3.8vw, 18px);
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  animation: fadeUp 0.6s ease-out 0.2s both;
+}
+
+.hero-salary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(245,158,11,0.2);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 24px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.6s ease-out 0.3s both;
+}
+
+.hero-salary .amount {
+  font-size: clamp(30px, 8vw, 52px);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: none;
+}
+
+.hero-salary .unit {
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 800;
+  padding: 16px 36px;
+  border-radius: 60px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 8px 30px rgba(220,38,38,0.45);
+  animation: fadeUp 0.6s ease-out 0.4s both;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(220,38,38,0.55); }
+.hero-cta svg { width: 20px; height: 20px; animation: bounce-right 1.5s infinite; }
+
+@media (min-width: 769px) {
+  .hero-salary {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@keyframes bounce-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══ SOCIAL PROOF BAR ═══ */
+.social-proof {
+  background: var(--dark);
+  padding: 14px 20px;
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.social-proof strong { color: var(--gold); }
+
+/* ═══ SECTIONS COMMON ═══ */
+section { padding: 60px 20px; }
+.container { max-width: 680px; margin: 0 auto; }
+
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(24px, 5.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+.section-desc {
+  font-size: 15px;
+  color: var(--gray-500);
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+/* ═══ SALARY COMPARE ═══ */
+.salary-section { background: var(--gray-100); }
+
+.salary-compare {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.salary-card {
+  flex: 1;
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.salary-card.vn {
+  background: var(--white);
+  border: 2px solid var(--gray-300);
+}
+
+.salary-card.jp {
+  background: linear-gradient(135deg, var(--blue), #2563EB);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  box-shadow: var(--shadow-lg);
+}
+
+.salary-card.jp::before {
+  content: '★ LƯƠNG TĂNG';
+  position: absolute;
+  top: 12px;
+  right: -28px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 34px;
+  transform: rotate(35deg);
+}
+
+.salary-card .flag { font-size: 36px; margin-bottom: 8px; }
+.salary-card .country { font-size: 13px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; }
+.salary-card .sal-amount { font-size: clamp(26px, 7vw, 40px); font-weight: 900; line-height: 1.1; }
+.salary-card .sal-unit { font-size: 13px; opacity: 0.7; margin-top: 4px; }
+
+.salary-note {
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* ═══ BENEFITS ═══ */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.benefit-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  padding: 22px 14px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.benefit-icon {
+  width: 50px; height: 50px;
+  margin: 0 auto 10px;
+  background: var(--blue-light);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+
+.benefit-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.benefit-card p { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
+
+/* ═══ PHOTO STRIP ═══ */
+.photo-strip {
+  padding: 0 20px 60px;
+  background: var(--white);
+}
+
+.photo-strip-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.photo-strip-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-caption {
+  background: var(--dark);
+  color: var(--white);
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.photo-caption strong { color: var(--gold); }
+
+/* ═══ STEPS ═══ */
+.steps-section { background: var(--gray-100); }
+
+.step-list { display: flex; flex-direction: column; gap: 0; }
+
+.step-item {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.step-item:last-child { padding-bottom: 0; }
+
+.step-line { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+
+.step-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+
+.step-connector { width: 3px; flex: 1; background: var(--gray-300); margin-top: 4px; }
+.step-item:last-child .step-connector { display: none; }
+
+.step-content { padding-top: 8px; }
+.step-content h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.step-content p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+
+/* ═══ TESTIMONIAL ═══ */
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  font-size: 60px;
+  font-weight: 900;
+  color: var(--red);
+  opacity: 0.12;
+  position: absolute;
+  top: 6px; left: 18px;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin-bottom: 14px;
+  position: relative; z-index: 1;
+}
+
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+.testimonial-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-light), var(--red-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+
+.testimonial-name { font-size: 14px; font-weight: 700; }
+.testimonial-role { font-size: 12px; color: var(--gray-500); }
+
+/* ═══ FAQ ═══ */
+.faq-section { background: var(--gray-100); }
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  gap: 12px;
+}
+
+.faq-q::after {
+  content: '+';
+  font-size: 22px; font-weight: 300;
+  color: var(--gray-500);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-q::after { content: '\2212'; }
+
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-a-inner { padding: 0 18px 16px; font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+/* ═══ FORM ═══ */
+.form-section {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--blue-dark) 100%);
+  color: var(--white);
+  padding: 60px 20px 100px;
+}
+
+.form-section .section-label { color: var(--gold); }
+.form-section .section-title { color: var(--white); }
+.form-section .section-desc { color: rgba(255,255,255,0.7); }
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(220,38,38,0.15);
+  border: 1px solid rgba(220,38,38,0.3);
+  color: #FCA5A5;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.counter svg { width: 16px; height: 16px; }
+
+.form-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  color: var(--dark);
+  box-shadow: var(--shadow-xl);
+}
+
+.form-group { margin-bottom: 16px; }
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--gray-700);
+}
+
+.form-group label .req { color: var(--red); margin-left: 2px; }
+
+.form-input {
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 16px;
+  font-family: var(--font);
+  border: 2px solid var(--gray-300);
+  border-radius: 10px;
+  background: var(--gray-100);
+  color: var(--dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(30,64,175,0.1);
+  background: var(--white);
+}
+
+select.form-input {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 17px;
+  font-size: 17px;
+  font-family: var(--font);
+  font-weight: 800;
+  color: var(--white);
+  background: var(--red);
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 24px rgba(220,38,38,0.35);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-submit:hover { background: var(--red-dark); transform: translateY(-2px); }
+.form-submit:active { transform: translateY(0); }
+
+.form-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.form-note svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 3px; }
+
+/* ═══ TRUST BAR ═══ */
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+}
+
+.trust-item svg { width: 16px; height: 16px; opacity: 0.8; }
+
+/* ═══ STICKY CTA ═══ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--gray-300);
+  padding: 10px 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.sticky-cta.visible { transform: translateY(0); }
+
+.sticky-text { font-size: 13px; font-weight: 700; color: var(--dark); line-height: 1.3; }
+.sticky-text span { color: var(--red); }
+
+.sticky-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font);
+  padding: 13px 22px;
+  border-radius: 60px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(220,38,38,0.3);
+}
+
+/* ═══ FOOTER ═══ */
+.footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 28px 20px 96px;
+  font-size: 12px;
+}
+
+.footer-brand { font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+
+/* ═══ SUCCESS ═══ */
+.success-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.success-overlay.show { display: flex; }
+
+.success-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 44px 28px;
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+  animation: pop 0.4s ease-out;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.success-icon {
+  width: 68px; height: 68px;
+  margin: 0 auto 16px;
+  background: #D1FAE5;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px;
+}
+
+.success-box h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.success-box p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 400px) {
+  .salary-compare { flex-direction: column; }
+  .benefits-grid { gap: 10px; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-box { padding: 22px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <header class="site-header">
+    <img class="brand-logo" src="logo-white.png" alt="SAKURA DRIVE">
+    <a href="#form" class="header-cta">Đăng ký</a>
+  </header>
+  <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 768px)" srcset="hero-portrait.jpg">
+      <img src="hero-landscape.jpg" alt="Tài xế Việt Nam tại Nhật Bản">
+    </picture>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Đang tuyển dụng 2026
+    </div>
+    <h1>Lái Xe Tải Tại <span class="highlight">Nhật Bản</span><br>Thu Nhập Cao — Cuộc Sống Tốt</h1>
+    <p class="hero-sub">Cơ hội vàng cho tài xế Việt Nam: lương cao, tăng đều mỗi năm, chỗ ở miễn phí, hỗ trợ visa toàn bộ.</p>
+    <div class="hero-salary">
+      <span class="amount">40–70 triệu</span>
+      <span class="unit">VNĐ/tháng<br><small style="opacity:0.7">≈ ¥240–420K</small></span>
+    </div>
+    <a href="#form" class="hero-cta">
+      ĐĂNG KÝ NGAY
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ SOCIAL PROOF ═══ -->
+<div class="social-proof">
+  Tuần này đã có <strong>47 người</strong> đăng ký tư vấn — Còn <strong>15 suất</strong> cho đợt tuyển dụng tháng 7
+</div>
+
+<!-- ═══ SALARY ═══ -->
+<section class="salary-section">
+  <div class="container">
+    <div class="section-label">Thu nhập</div>
+    <h2 class="section-title">So sánh lương tài xế</h2>
+    <p class="section-desc">Ngành vận tải Nhật đang thiếu hụt tài xế trầm trọng — mức lương vì thế tăng đều qua từng năm.</p>
+    <div class="salary-compare">
+      <div class="salary-card vn">
+        <div class="flag">🇻🇳</div>
+        <div class="country">Việt Nam</div>
+        <div class="sal-amount" style="color:var(--gray-700)">~8 triệu</div>
+        <div class="sal-unit">VNĐ/tháng</div>
+      </div>
+      <div class="salary-card jp">
+        <div class="flag">🇯🇵</div>
+        <div class="country">Nhật Bản</div>
+        <div class="sal-amount">40–70 triệu</div>
+        <div class="sal-unit">VNĐ/tháng</div>
+      </div>
+    </div>
+    <div class="salary-note">
+      Do thiếu hụt lao động, mức lương ngành vận tải Nhật đang tăng đều mỗi năm. Thu nhập thực tế tùy theo kinh nghiệm, tăng ca và phụ cấp.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Phúc lợi</div>
+    <h2 class="section-title">Bạn được gì khi sang Nhật?</h2>
+    <p class="section-desc">Không chỉ là lương cao — mọi thứ đều được hỗ trợ.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Chỗ ở miễn phí</h3>
+        <p>Ký túc xá hoặc căn hộ riêng, đầy đủ tiện nghi</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+        <h3>Hỗ trợ visa & vé máy bay</h3>
+        <p>Toàn bộ thủ tục visa và chi phí di chuyển</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3>Học tiếng Nhật miễn phí</h3>
+        <p>Khóa học trước và sau khi sang Nhật</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/></svg></div>
+        <h3>Bảo hiểm y tế</h3>
+        <p>Bảo hiểm sức khỏe theo chuẩn Nhật Bản</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Đào tạo lái xe</h3>
+        <p>Hỗ trợ đổi bằng lái & đào tạo thực tế</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Thưởng & OT</h3>
+        <p>Thưởng hiệu suất, làm thêm giờ trả 125%+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ROOM PHOTO ═══ -->
+<div class="photo-strip">
+  <div class="photo-strip-inner">
+    <img src="photo-dormitory.jpg" alt="Phòng ký túc xá tại Nhật Bản">
+    <div class="photo-caption">
+      Phòng ký túc xá thực tế — đầy đủ tiện nghi, <strong>miễn phí cho tài xế!</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STEPS ═══ -->
+<section class="steps-section">
+  <div class="container">
+    <div class="section-label">Quy trình</div>
+    <h2 class="section-title">4 bước để sang Nhật</h2>
+    <p class="section-desc">Đơn giản và minh bạch — chúng tôi đồng hành cùng bạn.</p>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-line"><div class="step-num">1</div><div class="step-connector"></div></div>
+        <div class="step-content">
+          <h3>Đăng ký tư vấn</h3>
+          <p>Điền form bên dưới — chúng tôi sẽ liên hệ trong 24h để tư vấn miễn phí.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-line"><div class="step-num">2</div><div class="step-connector"></div></div>
+        <div class="step-content">
+          <h3>Phỏng vấn & kiểm tra</h3>
+          <p>Phỏng vấn online hoặc trực tiếp, kiểm tra sức khỏe cơ bản.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-line"><div class="step-num">3</div><div class="step-connector"></div></div>
+        <div class="step-content">
+          <h3>Đào tạo tiếng Nhật</h3>
+          <p>3–6 tháng học tiếng Nhật miễn phí tại Việt Nam.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-line"><div class="step-num">4</div><div class="step-connector"></div></div>
+        <div class="step-content">
+          <h3>Bay sang Nhật & bắt đầu!</h3>
+          <p>Nhận visa, lên máy bay, bắt đầu công việc và cuộc sống mới.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHOTO STRIP ═══ -->
+<div class="photo-strip">
+  <div class="photo-strip-inner">
+    <img src="photo-logistics-team.jpg" alt="Đội ngũ tài xế Việt Nam và Nhật Bản">
+    <div class="photo-caption">
+      Đội ngũ tài xế Việt-Nhật tại trung tâm logistics — <strong>đồng nghiệp thân thiện, hỗ trợ nhau mỗi ngày!</strong>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Chia sẻ</div>
+    <h2 class="section-title">Anh chị đi trước nói gì?</h2>
+    <p class="section-desc">Những người Việt đã thay đổi cuộc sống nhờ sang Nhật lái xe.</p>
+    <div class="testimonial-card">
+      <p class="testimonial-text">Trước ở Việt Nam tôi lái xe tải kiếm được 8 triệu/tháng. Sang Nhật, tháng đầu tiên đã gửi về nhà được 40 triệu. Gia đình tôi giờ có cuộc sống tốt hơn rất nhiều.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" style="font-size:16px;font-weight:800;color:#1E40AF;">H</div>
+        <div>
+          <div class="testimonial-name">Anh H. — Hà Nội</div>
+          <div class="testimonial-role">Tài xế 2 năm tại Tokyo</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="photo-strip-inner" style="margin: 20px 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+      <img src="photo-family-call.jpg" alt="Tài xế gọi video cho gia đình tại Việt Nam" style="width:100%;height:auto;display:block;">
+      <div style="background:var(--dark);color:var(--white);padding:14px 18px;font-size:13px;font-weight:500;text-align:center;">
+        Xa nhà nhưng không xa gia đình — <strong>mỗi tối đều gọi video về cho vợ con!</strong>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">Ban đầu tôi lo lắng về tiếng Nhật, nhưng được hỗ trợ học từ A-Z. Bây giờ tôi giao tiếp bình thường với đồng nghiệp Nhật, công việc ổn định và cuối tuần còn đi chơi khắp nơi.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" style="font-size:16px;font-weight:800;color:#1E40AF;">T</div>
+        <div>
+          <div class="testimonial-name">Anh T. — Nghệ An</div>
+          <div class="testimonial-role">Tài xế 1.5 năm tại Osaka</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label">Hỏi đáp</div>
+    <h2 class="section-title">Câu hỏi thường gặp</h2>
+    <div class="faq-item open">
+      <div class="faq-q" onclick="toggleFaq(this)">Tôi chưa biết tiếng Nhật, có đăng ký được không?</div>
+      <div class="faq-a" style="max-height:200px"><div class="faq-a-inner">Hoàn toàn được! Chúng tôi cung cấp khóa học tiếng Nhật miễn phí 3-6 tháng trước khi bạn sang Nhật. Bạn chỉ cần có tinh thần học hỏi.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Tôi chưa có bằng lái xe tải, có được không?</div>
+      <div class="faq-a"><div class="faq-a-inner">Được. Nếu bạn có bằng lái xe B2 trở lên, chúng tôi sẽ hỗ trợ đào tạo và đổi sang bằng lái Nhật Bản. Chi phí do công ty chịu.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Chi phí sang Nhật là bao nhiêu?</div>
+      <div class="faq-a"><div class="faq-a-inner">Toàn bộ chi phí visa, vé máy bay, đào tạo đều do công ty hỗ trợ. Bạn không cần đặt cọc trước. Chi tiết sẽ được tư vấn khi phỏng vấn.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Hợp đồng bao lâu?</div>
+      <div class="faq-a"><div class="faq-a-inner">Hợp đồng ban đầu thường là 3-5 năm với visa Tokutei Ginou (Kỹ năng đặc định). Sau đó có thể gia hạn hoặc chuyển đổi visa dài hạn.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Độ tuổi nào được nhận?</div>
+      <div class="faq-a"><div class="faq-a-inner">Từ 20 đến 45 tuổi, sức khỏe tốt. Ưu tiên ứng viên có kinh nghiệm lái xe nhưng không bắt buộc.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORM ═══ -->
+<section class="form-section" id="form">
+  <div class="container">
+    <div class="section-label">Đăng ký</div>
+    <h2 class="section-title">Đăng ký tư vấn miễn phí</h2>
+    <p class="section-desc">Điền thông tin — chúng tôi liên hệ bạn trong 24 giờ.</p>
+    <div class="counter">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>Tuần này đã có <strong>47</strong> người đăng ký</span>
+    </div>
+    <div class="form-box">
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Họ và tên <span class="req">*</span></label>
+          <input type="text" class="form-input" name="name" placeholder="Nguyễn Văn A" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Số điện thoại <span class="req">*</span></label>
+            <input type="tel" class="form-input" name="phone" placeholder="0912 345 678" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-input" name="email" placeholder="email@gmail.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tuổi <span class="req">*</span></label>
+            <input type="number" class="form-input" name="age" placeholder="25" min="18" max="60" required>
+          </div>
+          <div class="form-group">
+            <label>Giới tính <span class="req">*</span></label>
+            <select class="form-input" name="gender" required>
+              <option value="" disabled selected>Chọn</option>
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tỉnh/Thành phố <span class="req">*</span></label>
+          <select class="form-input" name="province" required>
+            <option value="" disabled selected>Chọn tỉnh/thành phố</option>
+            <option>Hà Nội</option><option>TP. Hồ Chí Minh</option>
+            <option>Đà Nẵng</option><option>Hải Phòng</option><option>Cần Thơ</option>
+            <option>Nghệ An</option><option>Thanh Hóa</option><option>Hà Tĩnh</option>
+            <option>Quảng Bình</option><option>Bắc Ninh</option><option>Bắc Giang</option>
+            <option>Thái Bình</option><option>Nam Định</option><option>Hải Dương</option>
+            <option>Vĩnh Phúc</option><option>Phú Thọ</option><option>Hưng Yên</option>
+            <option>Quảng Ninh</option><option>Lạng Sơn</option><option>Thái Nguyên</option>
+            <option>Bình Dương</option><option>Đồng Nai</option><option>Long An</option>
+            <option>Tiền Giang</option><option>Bến Tre</option><option>An Giang</option>
+            <option>Khánh Hòa</option><option>Bình Định</option><option>Quảng Nam</option>
+            <option>Đắk Lắk</option><option>Lâm Đồng</option><option>Gia Lai</option>
+            <option>Tỉnh khác</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Bằng lái xe <span class="req">*</span></label>
+          <select class="form-input" name="license" required>
+            <option value="" disabled selected>Chọn</option>
+            <option value="none">Chưa có bằng lái</option>
+            <option value="A">Bằng A (xe máy)</option>
+            <option value="B1">Bằng B1</option>
+            <option value="B2">Bằng B2</option>
+            <option value="C">Bằng C (xe tải)</option>
+            <option value="D">Bằng D trở lên</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Trình độ tiếng Nhật</label>
+          <select class="form-input" name="japanese">
+            <option value="" disabled selected>Chọn</option>
+            <option value="none">Chưa biết tiếng Nhật</option>
+            <option value="N5">N5 — Sơ cấp</option>
+            <option value="N4">N4 — Cơ bản</option>
+            <option value="N3">N3 — Trung cấp</option>
+            <option value="N2-N1">N2/N1 — Nâng cao</option>
+          </select>
+        </div>
+        <!-- honeypot: bots fill this, humans never see it -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0">
+        <p class="form-error" id="formError" style="display:none;color:var(--red);font-size:14px;margin:0 0 12px;text-align:center"></p>
+        <button type="submit" class="form-submit" id="submitBtn">GỬI ĐĂNG KÝ NGAY</button>
+      </form>
+      <p class="form-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gray-500)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Thông tin được bảo mật — chỉ dùng để liên hệ tư vấn.
+      </p>
+    </div>
+    <div class="trust-bar">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Tư vấn miễn phí
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Không thu phí trước
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Phản hồi 24h
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <img class="footer-logo" src="logo-white.png" alt="SAKURA DRIVE">
+  <p>Kết nối tài xế Việt Nam với cơ hội tại Nhật Bản</p>
+  <p style="margin-top:10px">© 2026 Sakura Drive. All rights reserved.</p>
+</footer>
+
+<!-- ═══ STICKY CTA ═══ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-text">Lương <span>40–70 triệu/tháng</span><br>đang chờ bạn!</div>
+  <a href="#form" class="sticky-btn">ĐĂNG KÝ NGAY →</a>
+</div>
+
+<!-- ═══ SUCCESS OVERLAY ═══ -->
+<div class="success-overlay" id="successOverlay" onclick="this.classList.remove('show')">
+  <div class="success-box" onclick="event.stopPropagation()">
+    <div class="success-icon">✅</div>
+    <h2>Đăng ký thành công!</h2>
+    <p>Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24 giờ qua số điện thoại bạn đã cung cấp.</p>
+    <br>
+    <button onclick="document.getElementById('successOverlay').classList.remove('show')" style="background:var(--blue);color:#fff;border:none;padding:13px 28px;border-radius:60px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font)">Đã hiểu</button>
+  </div>
+</div>
+
+<script>
+const sticky = document.getElementById('stickyCta');
+const heroEl = document.getElementById('top');
+const formEl = document.getElementById('form');
+
+function checkSticky() {
+  const hb = heroEl.getBoundingClientRect().bottom;
+  const ft = formEl.getBoundingClientRect().top;
+  sticky.classList.toggle('visible', hb < 0 && ft > window.innerHeight * 0.5);
+}
+window.addEventListener('scroll', checkSticky, { passive: true });
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const ans = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    ans.style.maxHeight = ans.scrollHeight + 'px';
+  }
+}
+
+// ── Backend endpoint ──
+// Same-origin default (works when the backend also serves this page).
+// If the LP is hosted separately, set window.KINDVIJA_API to the full URL
+// in its own script tag placed before this one, e.g.:
+//   window.KINDVIJA_API = 'https://your-api.com/api/leads'
+const API_ENDPOINT = window.KINDVIJA_API || '/api/leads';
+
+function showFormError(msg) {
+  const el = document.getElementById('formError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+function clearFormError() {
+  const el = document.getElementById('formError');
+  el.style.display = 'none';
+  el.textContent = '';
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const originalLabel = btn.textContent;
+
+  // Honeypot: if filled, it's a bot — pretend success, send nothing.
+  if (form.website && form.website.value) {
+    document.getElementById('successOverlay').classList.add('show');
+    form.reset();
+    return;
+  }
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  delete data.website;
+
+  // Attach tracking context (useful for ad attribution)
+  const params = new URLSearchParams(location.search);
+  data.utm_source   = params.get('utm_source')   || '';
+  data.utm_medium   = params.get('utm_medium')   || '';
+  data.utm_campaign = params.get('utm_campaign') || '';
+  data.page_url     = location.href;
+
+  clearFormError();
+  btn.textContent = 'Đang gửi...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  try {
+    const res = await fetch(API_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+
+    document.getElementById('successOverlay').classList.add('show');
+    form.reset();
+  } catch (err) {
+    showFormError('Gửi không thành công. Vui lòng kiểm tra kết nối và thử lại.');
+  } finally {
+    btn.textContent = originalLabel;
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
