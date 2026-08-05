@@ -1,0 +1,21 @@
+name: Deploy to Vercel
+
+# Trigger a Vercel deployment via Deploy Hook whenever `production` is pushed.
+# This bypasses Vercel's git-integration commit-author check (which blocks
+# deploys on the Hobby plan when the GitHub Login Connection points to a
+# different Vercel account), so it works regardless of which account
+# currently "owns" the dtsprogram98 GitHub connection.
+
+on:
+  push:
+    branches:
+      - production
+  workflow_dispatch: {}
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Vercel Deploy Hook
+        run: |
+          curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
