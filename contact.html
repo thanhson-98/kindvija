@@ -335,6 +335,12 @@
     border:1.5px dashed var(--placeholder);border-radius:4px;padding:14px 16px;
     background:rgba(232,104,30,.04);}
   .privacy-line{font-size:.76rem;color:var(--slate);margin:6px 0 20px;}
+  .agree{margin:-8px 0 22px;}
+  .agree label{display:inline-flex;align-items:center;gap:10px;font-size:.84rem;cursor:pointer;}
+  .agree input{width:18px;height:18px;accent-color:var(--orange);flex-shrink:0;cursor:pointer;}
+  .agree a{color:var(--orange);border-bottom:1px solid currentColor;}
+  .agree .req{color:#fff;background:var(--orange);font-size:.6rem;border-radius:2px;
+    padding:2px 7px;letter-spacing:.12em;}
 
   .cta-band{background:var(--ink-deep);color:#fff;text-align:center;padding:84px 0;}
   .cta-band .eyebrow{color:var(--orange);}
@@ -368,6 +374,8 @@
   .ft-badge b{color:#fff;}
   .ft-badge .ph{border-color:rgba(232,104,30,.6);color:#f0a06a;background:none;font-size:.68rem;}
   .ft-copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.7rem;}
+  .ft-copy a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:color .25s;}
+  .ft-copy a:hover{color:#fff;}
 
   @media(max-width:960px){nav.gnav{display:none;}}
   @media(max-width:860px){
@@ -512,7 +520,10 @@
         <label>ご相談内容<span class="req">必須</span></label>
         <textarea required placeholder="例）運送業でドライバーの人手不足に悩んでいます。特定技能での受け入れは可能でしょうか。"></textarea>
       </div>
-      <p class="privacy-line">送信いただいた内容は、お問い合わせへの対応のみに利用します。（プライバシーポリシーは本番公開時に設置）</p>
+      <p class="privacy-line">送信いただいた内容は、お問い合わせへの対応のみに利用します。</p>
+      <div class="agree">
+        <label><input type="checkbox" name="agree" required><span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span><span class="req">必須</span></label>
+      </div>
       <button type="submit" class="submit">この内容で相談する</button>
       <div class="form-note" id="form-note">
         ※ このページはデザインプレビュー版のため、まだ送信されません。本番公開時に、Googleスプレッドシート連携（GAS）を実装します。
@@ -575,7 +586,7 @@
     </div>
     <div class="ft-copy">
       <span>&copy; 2026 KIND ONE, K.K. All Rights Reserved.</span>
-      <span>プライバシーポリシー（本番公開時に設置）</span>
+      <a href="privacy.html">プライバシーポリシー</a>
     </div>
   </div>
 </footer>
