@@ -1,0 +1,5 @@
+# 本番に公開しないファイル（リポジトリには残す）
+# 記事テンプレート：コピー元としてのみ使用
+column/_template.html
+# サンプル記事：中尾さんの確認待ち。公開時はこの行を削除し、column.html にカード、sitemap.xml に1件追加
+column/2026-10-tokutei-vs-jisshu.html

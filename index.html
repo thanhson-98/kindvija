@@ -455,7 +455,7 @@
   .fullhero picture,.fullhero img{position:absolute;inset:0;width:100%;height:100%;
     object-fit:cover;object-position:center 86%;}
   .fullhero-shade{position:absolute;inset:0;background:
-    linear-gradient(to top, rgba(15,29,54,.74) 0%, rgba(15,29,54,.30) 40%, rgba(15,29,54,0) 62%),
+    linear-gradient(to top, rgba(15,29,54,.84) 0%, rgba(15,29,54,.46) 34%, rgba(15,29,54,0) 68%),
     linear-gradient(to bottom, rgba(15,29,54,.28), transparent 20%);}
   .fullhero-copy{position:absolute;left:0;right:0;bottom:10%;color:#fff;}
   .fh-kicker{display:inline-block;font-size:.7rem;letter-spacing:.3em;font-weight:600;
@@ -476,6 +476,11 @@
     55%{transform:scaleY(1);transform-origin:bottom}
     100%{transform:scaleY(0);transform-origin:bottom}}
   @media(min-aspect-ratio:1.9/1){.fullhero img{object-position:center 74%;}}
+  /* ヒーロースライド */
+  .fh-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;}
+  .fh-slide.on{opacity:1;}
+  .fh-slide img{object-position:center 50%;}
+  @media(prefers-reduced-motion:reduce){.fh-slide{transition:none;}}
   .intro{padding:88px 0 0;}
   .intro .ilead{color:var(--slate);font-size:.96rem;max-width:36em;line-height:2.3;}
   .intro .icta{margin:38px 0 46px;display:flex;gap:16px;flex-wrap:wrap;}
@@ -501,6 +506,7 @@
       <a href="service.html">支援内容</a>
       <a href="service.html#tokutei">特定技能とは</a>
       <a href="about.html">運営会社</a>
+      <a href="column.html">コラム</a>
       <a href="contact.html">お問い合わせ</a>
     </nav>
     <div class="hd-right">
@@ -511,10 +517,26 @@
 </header>
 
 <div class="fullhero" id="top">
-  <picture>
-    <source media="(max-width:700px)" srcset="img/corp-hero-mobile.webp">
-    <img src="img/corp-hero-wide.webp" alt="さまざまな分野で働く人材が朝の光の中を歩くイメージ">
-  </picture>
+  <div class="fh-slide on" data-i="0">
+    <picture>
+      <source media="(max-width:700px)" srcset="img/hero-01-welding-sp.webp">
+      <img src="img/hero-01-welding.webp" alt="半自動溶接で建機の部品を溶接する作業員">
+    </picture>
+  </div>
+  <!-- 塗装スライド：差し替え画像の到着待ち。届いたら hero-02-painting(-sp).webp を置いてこのブロックを有効化
+  <div class="fh-slide">
+    <picture>
+      <source media="(max-width:700px)" srcset="img/hero-02-painting-sp.webp">
+      <img src="img/hero-02-painting.webp" alt="塗装ブースで金属パネルを吹付塗装する作業員" loading="lazy">
+    </picture>
+  </div>
+  -->
+  <div class="fh-slide" data-i="1">
+    <picture>
+      <source media="(max-width:700px)" srcset="img/hero-03-bento-sp.webp">
+      <img src="img/hero-03-bento.webp" alt="食品工場の弁当製造ラインで盛り付けをする作業員" loading="lazy">
+    </picture>
+  </div>
   <div class="fullhero-shade" aria-hidden="true"></div>
   <div class="fullhero-copy">
     <div class="wrap">
@@ -555,8 +577,8 @@
 
 <div class="cred-band">
   <div class="wrap cred-inner">
-    <div class="cred"><b>登録支援機関</b><span class="ph">登録番号：後日掲載</span></div>
-    <div class="cred"><b>無料職業紹介事業</b><span class="ph">許可番号：後日掲載</span></div>
+    <div class="cred"><b>登録支援機関</b><span>登録番号：26登-013392</span></div>
+    <div class="cred"><b>無料職業紹介事業</b><span>許可番号：34-ム-300044</span></div>
     <div class="cred"><b>特定技能 16分野対応</b><span>自動車運送業ほか</span></div>
   </div>
 </div>
@@ -613,7 +635,7 @@
       <h3 class="ft-title">対応分野</h3>
       <div class="field-tiles">
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field01-transport.webp" alt="整列した大型輸送トラック"></div><div class="ftile-label"><b>自動車運送業</b><span>TRANSPORT</span></div></div>
-        <div class="ftile"><div class="ftile-img"><img src="img/corp-field02-care.webp" alt="車いすを押す介護スタッフの後ろ姿"></div><div class="ftile-label"><b>介護</b><span>CARE</span></div></div>
+        <div class="ftile"><div class="ftile-img"><img src="img/corp-field02-food.webp" alt="弁当の盛り付けをする食品工場の作業員"></div><div class="ftile-label"><b>飲食料品製造業</b><span>FOOD MANUFACTURING</span></div></div>
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field03-construction.webp" alt="建設現場を見渡す作業員の後ろ姿"></div><div class="ftile-label"><b>建設</b><span>CONSTRUCTION</span></div></div>
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field04-manufacturing.webp" alt="精密部品を組み立てる手元"></div><div class="ftile-label"><b>工業製品製造業</b><span>MANUFACTURING</span></div></div>
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field05-food.webp" alt="料理を盛り付けるシェフの手元"></div><div class="ftile-label"><b>外食業</b><span>FOOD SERVICE</span></div></div>
@@ -692,7 +714,7 @@
         <img class="logo-mark" src="img/logo-kindone-white.webp" alt="">
         <span class="cat">特定技能 登録支援機関</span>
         <span class="co">カインド・ONE</span>
-        <p>運営：株式会社カインド・ONE<br>〒731-0113 広島県広島市安佐南区西原5-20-2-1201<br>TEL：082-962-8020</p>
+        <p>運営：株式会社カインド・ONE<br>〒731-0113 広島県広島市安佐南区西原5丁目20番2-1201号<br>TEL：082-962-8020</p>
       </div>
       <div class="ft-col">
         <h4>支援内容</h4>
@@ -710,6 +732,7 @@
         <a href="about.html#message">代表挨拶</a>
         <a href="about.html#history">沿革</a>
         <a href="about.html#company">会社概要</a>
+        <a href="column.html">コラム</a>
       </div>
       <div class="ft-col">
         <h4>お問い合わせ</h4>
@@ -725,8 +748,8 @@
       </div>
     </div>
     <div class="ft-licenses">
-      <div class="ft-badge"><b>登録支援機関</b><span class="ph">登録番号：後日掲載</span></div>
-      <div class="ft-badge"><b>無料職業紹介事業</b><span class="ph">許可番号：後日掲載</span></div>
+      <div class="ft-badge"><b>登録支援機関</b><span>登録番号：26登-013392</span></div>
+      <div class="ft-badge"><b>無料職業紹介事業</b><span>許可番号：34-ム-300044</span></div>
       <div class="ft-badge"><b>労働者派遣事業</b><span class="ph">許可番号：後日掲載</span></div>
     </div>
     <div class="ft-copy">
@@ -736,5 +759,19 @@
   </div>
 </footer>
 
+<script>
+  // ヒーロー画像を5秒ごとにクロスフェード
+  (function(){
+    var slides = document.querySelectorAll('.fullhero .fh-slide');
+    if (slides.length < 2) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var i = 0;
+    setInterval(function(){
+      slides[i].classList.remove('on');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('on');
+    }, 5000);
+  })();
+</script>
 </body>
 </html>
