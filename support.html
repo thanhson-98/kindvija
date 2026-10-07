@@ -405,6 +405,10 @@
   .ft-copy a:hover{color:#fff;}
 
   @media(max-width:960px){nav.gnav{display:none;}}
+  /* スマホ用：ナビ非表示時だけヘッダーに出すコラムへのリンク */
+  .hd-col{display:none;font-size:.74rem;font-weight:600;letter-spacing:.12em;color:var(--ink);
+    padding:2px 0;border-bottom:1px solid var(--orange);white-space:nowrap;}
+  @media(max-width:960px){.hd-col{display:inline-block;}}
   @media(max-width:860px){
     section{padding:72px 0;}
     .hero-inner{grid-template-columns:1fr;padding:60px 0 50px;}
@@ -442,7 +446,14 @@
     .brand .cat{font-size:.52rem;}
     .brand .co{font-size:1rem;letter-spacing:.1em;}
     .lang{display:none;}
-    .hd-cta{padding:8px 14px;font-size:.7rem;letter-spacing:.1em;}
+    .hd-cta{padding:8px 10px;font-size:.7rem;letter-spacing:.08em;white-space:nowrap;}
+    /* コラムリンク追加分の幅を確保 */
+    .hd{padding-left:16px;padding-right:16px;gap:10px;}
+    .brand{gap:8px;}
+    .brand .logo-mark{height:28px;}
+    .brand-txt{white-space:nowrap;}
+    .hd-right{gap:10px;}
+    .hd-col{font-size:.7rem;letter-spacing:.08em;}
     .hero h1{font-size:1.62rem;}
     .page-hero .en{font-size:1.6rem;}
   }
@@ -473,6 +484,7 @@
     </nav>
     <div class="hd-right">
       <span class="lang"><b>JA</b> / VI</span>
+      <a class="hd-col" href="column.html">コラム</a>
       <a class="hd-cta" href="contact.html">無料相談</a>
     </div>
   </div>
@@ -638,7 +650,7 @@
     <div class="ft-licenses">
       <div class="ft-badge"><b>登録支援機関</b><span>登録番号：26登-013392</span></div>
       <div class="ft-badge"><b>無料職業紹介事業</b><span>許可番号：34-ム-300044</span></div>
-      <div class="ft-badge"><b>労働者派遣事業</b><span class="ph">許可番号：後日掲載</span></div>
+      <div class="ft-badge"><b>自動車運送業分野 特定技能協議会</b><span>構成員番号：26AT20136</span></div>
     </div>
     <div class="ft-copy">
       <span>&copy; 2026 KIND ONE, K.K. All Rights Reserved.</span>
