@@ -488,6 +488,7 @@
     100%{transform:scaleY(0);transform-origin:bottom}}
   @media(min-aspect-ratio:1.9/1){.fullhero img{object-position:center 74%;}}
   /* ヒーロースライド */
+  .fh-media{position:absolute;inset:0;}
   .fh-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;}
   .fh-slide.on{opacity:1;}
   .fh-slide img{object-position:center 50%;}
@@ -499,6 +500,14 @@
     .fh-tate{display:none;}
     .fullhero{height:calc(100svh - 62px);min-height:460px;}
     .fullhero-copy{bottom:12%;}
+  }
+  /* スマホ：画像は16:9のまま、見出しは画像の下に置く */
+  @media(max-width:700px){
+    .fullhero{height:auto;min-height:0;}
+    .fh-media{position:relative;aspect-ratio:16/9;}
+    .fullhero-shade{display:none;}
+    .fullhero-copy{position:static;padding:28px 0 34px;}
+    .fh-scroll{display:none;}
   }
 </style>
 </head>
@@ -529,27 +538,14 @@
 </header>
 
 <div class="fullhero" id="top">
-  <div class="fh-slide on" data-i="0">
-    <picture>
-      <source media="(max-width:700px)" srcset="img/hero-01-welding-sp.webp">
-      <img src="img/hero-01-welding.webp" alt="半自動溶接で建機の部品を溶接する作業員">
-    </picture>
+  <div class="fh-media">
+    <div class="fh-slide on"><img src="img/corp-hero01-welding.webp" alt="工場で建機部品を溶接する作業員" fetchpriority="high"></div>
+    <div class="fh-slide"><img src="img/corp-hero02-painting.webp" alt="塗装ブースで金属部品を吹付塗装する作業員" loading="lazy"></div>
+    <div class="fh-slide"><img src="img/corp-hero03-food.webp" alt="食品工場で弁当の盛り付けをする作業員たち" loading="lazy"></div>
+    <div class="fh-slide"><img src="img/corp-hero04-tobi.webp" alt="足場の上で作業するとび職人" loading="lazy"></div>
+    <div class="fh-slide"><img src="img/corp-hero05-piping.webp" alt="機械室で配管の取り付けをする作業員" loading="lazy"></div>
+    <div class="fullhero-shade" aria-hidden="true"></div>
   </div>
-  <!-- 塗装スライド：差し替え画像の到着待ち。届いたら hero-02-painting(-sp).webp を置いてこのブロックを有効化
-  <div class="fh-slide">
-    <picture>
-      <source media="(max-width:700px)" srcset="img/hero-02-painting-sp.webp">
-      <img src="img/hero-02-painting.webp" alt="塗装ブースで金属パネルを吹付塗装する作業員" loading="lazy">
-    </picture>
-  </div>
-  -->
-  <div class="fh-slide" data-i="1">
-    <picture>
-      <source media="(max-width:700px)" srcset="img/hero-03-bento-sp.webp">
-      <img src="img/hero-03-bento.webp" alt="食品工場の弁当製造ラインで盛り付けをする作業員" loading="lazy">
-    </picture>
-  </div>
-  <div class="fullhero-shade" aria-hidden="true"></div>
   <div class="fullhero-copy">
     <div class="wrap">
       <span class="fh-kicker">特定技能 登録支援機関｜広島</span>
@@ -647,7 +643,7 @@
       <h3 class="ft-title">対応分野</h3>
       <div class="field-tiles">
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field01-transport.webp" alt="整列した大型輸送トラック"></div><div class="ftile-label"><b>自動車運送業</b><span>TRANSPORT</span></div></div>
-        <div class="ftile"><div class="ftile-img"><img src="img/corp-field02-food.webp" alt="弁当の盛り付けをする食品工場の作業員"></div><div class="ftile-label"><b>飲食料品製造業</b><span>FOOD MANUFACTURING</span></div></div>
+        <div class="ftile"><div class="ftile-img"><img src="img/corp-field02-foodmfg.webp" alt="食品工場で弁当の盛り付けをする作業員たち"></div><div class="ftile-label"><b>飲食料品製造業</b><span>FOOD MANUFACTURING</span></div></div>
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field03-construction.webp" alt="建設現場を見渡す作業員の後ろ姿"></div><div class="ftile-label"><b>建設</b><span>CONSTRUCTION</span></div></div>
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field04-manufacturing.webp" alt="精密部品を組み立てる手元"></div><div class="ftile-label"><b>工業製品製造業</b><span>MANUFACTURING</span></div></div>
         <div class="ftile"><div class="ftile-img"><img src="img/corp-field05-food.webp" alt="料理を盛り付けるシェフの手元"></div><div class="ftile-label"><b>外食業</b><span>FOOD SERVICE</span></div></div>
