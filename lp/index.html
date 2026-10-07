@@ -1265,12 +1265,19 @@ async function handleSubmit(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
+    if (!res.ok) {
+      const j = await res.json().catch(() => ({}));
+      const err = new Error('HTTP ' + res.status);
+      err.invalid = j.error === 'invalid_fields';
+      throw err;
+    }
 
     document.getElementById('successOverlay').classList.add('show');
     form.reset();
   } catch (err) {
-    showFormError('Gửi không thành công. Vui lòng kiểm tra kết nối và thử lại.');
+    showFormError(err.invalid
+      ? 'Thông tin chưa hợp lệ. Vui lòng kiểm tra lại các mục bắt buộc (*) rồi gửi lại.'
+      : 'Gửi không thành công. Vui lòng kiểm tra kết nối mạng và thử lại sau ít phút.');
   } finally {
     btn.textContent = originalLabel;
     btn.disabled = false;

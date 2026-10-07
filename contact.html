@@ -331,9 +331,14 @@
     padding:17px;border-radius:2px;font-size:.92rem;font-weight:600;letter-spacing:.2em;
     font-family:inherit;transition:background .3s;}
   .cform .submit:hover{background:var(--orange);}
-  .form-note{display:none;margin-top:16px;font-size:.82rem;color:var(--placeholder);
-    border:1.5px dashed var(--placeholder);border-radius:4px;padding:14px 16px;
-    background:rgba(232,104,30,.04);}
+  .form-note{display:none;margin-top:16px;font-size:.84rem;line-height:1.9;color:#B42318;
+    border:1px solid rgba(180,35,24,.4);border-radius:4px;padding:14px 16px;background:#FEF3F2;}
+  .form-note a{color:inherit;border-bottom:1px solid currentColor;}
+  .cform .submit:disabled{opacity:.6;cursor:wait;}
+  .cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+  .form-done{text-align:center;padding:24px 0 8px;}
+  .form-done h3{font-size:1.15rem;margin-bottom:14px;}
+  .form-done p{font-size:.9rem;line-height:2;color:var(--slate);}
   .privacy-line{font-size:.76rem;color:var(--slate);margin:6px 0 20px;}
   .agree{margin:-8px 0 22px;}
   .agree label{display:inline-flex;align-items:center;gap:10px;font-size:.84rem;cursor:pointer;}
@@ -501,11 +506,11 @@
       </div>
     </div>
 
-    <form class="cform" id="cform">
+    <form class="cform" id="cform" novalidate>
       <h3>無料相談・お問い合わせフォーム</h3>
       <div class="field">
         <label>お問い合わせの種類<span class="req">必須</span></label>
-        <select required>
+        <select name="type" required>
           <option value="">選択してください</option>
           <option>特定技能外国人の受け入れについて（はじめての方歓迎）</option>
           <option>人材のご紹介について（職業紹介）</option>
@@ -515,42 +520,89 @@
       </div>
       <div class="field">
         <label>会社名</label>
-        <input type="text" placeholder="株式会社〇〇（個人の方は空欄で構いません）">
+        <input type="text" name="company" maxlength="200" autocomplete="organization" placeholder="株式会社〇〇（個人の方は空欄で構いません）">
       </div>
       <div class="field">
         <label>お名前<span class="req">必須</span></label>
-        <input type="text" required placeholder="山田 太郎">
+        <input type="text" name="name" required maxlength="100" autocomplete="name" placeholder="山田 太郎">
       </div>
       <div class="field">
         <label>メールアドレス<span class="req">必須</span></label>
-        <input type="email" required placeholder="taro@example.com">
+        <input type="email" name="email" required maxlength="254" autocomplete="email" placeholder="taro@example.com">
       </div>
       <div class="field">
         <label>電話番号</label>
-        <input type="tel" placeholder="000-0000-0000">
+        <input type="tel" name="phone" maxlength="40" autocomplete="tel" placeholder="000-0000-0000">
       </div>
       <div class="field">
         <label>ご相談内容<span class="req">必須</span></label>
-        <textarea required placeholder="例）運送業でドライバーの人手不足に悩んでいます。特定技能での受け入れは可能でしょうか。"></textarea>
+        <textarea name="message" required maxlength="5000" placeholder="例）運送業でドライバーの人手不足に悩んでいます。特定技能での受け入れは可能でしょうか。"></textarea>
       </div>
       <p class="privacy-line">送信いただいた内容は、お問い合わせへの対応のみに利用します。</p>
       <div class="agree">
         <label><input type="checkbox" name="agree" required><span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span><span class="req">必須</span></label>
       </div>
-      <button type="submit" class="submit">この内容で相談する</button>
-      <div class="form-note" id="form-note">
-        ※ このページはデザインプレビュー版のため、まだ送信されません。本番公開時に、Googleスプレッドシート連携（GAS）を実装します。
-      </div>
+      <!-- スパム対策（honeypot）：人には見えない欄。入力があれば送信しない -->
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="submit" id="cform-submit">この内容で相談する</button>
+      <div class="form-note" id="form-note" role="alert" aria-live="polite"></div>
     </form>
   </div>
 </section>
 <script>
-  document.getElementById('cform').addEventListener('submit', function(e){
-    e.preventDefault();
-    var n = document.getElementById('form-note');
-    n.style.display = 'block';
-    n.scrollIntoView({behavior:'smooth', block:'nearest'});
-  });
+  // お問い合わせフォーム送信（/api/contact → メール）
+  (function(){
+    var form = document.getElementById('cform');
+    var btn = document.getElementById('cform-submit');
+    var note = document.getElementById('form-note');
+    var FALLBACK = 'お手数ですが、時間をおいて再度お試しいただくか、お電話（<a href="tel:0829628020">082-962-8020</a>）またはメール（<a href="mailto:kind-one@email.plala.or.jp">kind-one@email.plala.or.jp</a>）でご連絡ください。';
+
+    function showError(html){
+      note.innerHTML = html;
+      note.style.display = 'block';
+      note.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      note.style.display = 'none';
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var f = form.elements;
+      var data = {
+        type: f.type.value, company: f.company.value, name: f.name.value,
+        email: f.email.value, phone: f.phone.value, message: f.message.value,
+        agree: f.agree.checked, website: f.website.value
+      };
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '送信中…';
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      }).then(function(res){
+        return res.json().catch(function(){ return {ok:false}; }).then(function(j){
+          if (!res.ok || !j.ok) throw new Error(j.error || ('HTTP ' + res.status));
+        });
+      }).then(function(){
+        form.innerHTML =
+          '<div class="form-done">' +
+          '<h3>お問い合わせを受け付けました</h3>' +
+          '<p>送信いただき、ありがとうございます。<br>内容を確認のうえ、担当者よりご連絡いたします。<br>' +
+          'お急ぎの場合はお電話（<a href="tel:0829628020">082-962-8020</a>）でもご相談いただけます。</p>' +
+          '</div>';
+        form.scrollIntoView({behavior:'smooth', block:'center'});
+      }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = label;
+        showError('送信できませんでした。' + FALLBACK);
+      });
+    });
+  })();
 </script>
 
 <footer>

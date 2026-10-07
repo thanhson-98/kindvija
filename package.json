@@ -1,0 +1,11 @@
+{
+  "name": "kindvija",
+  "private": true,
+  "description": "Static site + Vercel functions for the contact (contact.html) and LP (/lp) forms",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.15"
+  }
+}
