@@ -12,7 +12,9 @@
 <meta property="og:title" content="KIND ONE | Việc làm Tokutei Ginou tại Hiroshima">
 <meta property="og:description" content="Chuyển việc Tokutei Ginou về Hiroshima — minh bạch, không phí môi giới.">
 <meta property="og:url" content="https://www.kindvija.com/vi/">
-<meta property="og:image" content="https://www.kindvija.com/vi/img/corp-hero01-welding.webp">
+<meta property="og:image" content="https://www.kindvija.com/vi/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,6 +150,21 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
   .section{padding:56px 0}
   .jobs{grid-template-columns:1fr}
   .lang{display:none}
+  /* Header gọn 1 dòng: logo + nút */
+  .site-header .wrap{flex-wrap:nowrap;gap:12px;padding-top:10px;padding-bottom:10px}
+  .brand{gap:10px;min-width:0}
+  .brand-name span{display:none}
+  .header-actions .btn-small{padding:10px 14px;font-size:14px;white-space:nowrap}
+  /* Chừa chỗ cho nút Zalo nổi để không che nút cuối danh sách / footer */
+  #jobs{padding-bottom:96px}
+  .site-footer .wrap{padding-bottom:96px}
+  .brand-name strong{white-space:nowrap}
+}
+@media (max-width:360px){
+  .wrap{padding:0 16px}
+  .brand-mark{width:34px;height:34px;font-size:13px}
+  .brand-name strong{font-size:16px}
+  .header-actions .btn-small{padding:9px 12px;font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){
   .hero-slides img{transition:none}
@@ -338,7 +355,7 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
     </div>
     <div class="contact-actions">
       <div class="qr"><img src="/vi/img/zalo-qr.png" alt="Mã QR Zalo của chị Vân" width="600" height="600" loading="lazy"></div>
-      <a class="btn btn-white" href="/lp/">Đăng ký tư vấn</a>
+      <a class="btn btn-white" href="https://zalo.me/0377999174" target="_blank" rel="noopener">Đăng ký tư vấn</a>
     </div>
   </div>
 </section>
