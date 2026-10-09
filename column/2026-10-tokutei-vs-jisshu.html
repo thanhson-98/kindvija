@@ -370,6 +370,9 @@
   .ft-copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.7rem;}
   .ft-copy a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:color .25s;}
   .ft-copy a:hover{color:#fff;}
+  .ft-links{display:flex;gap:22px;flex-wrap:wrap;}
+  a[lang="vi"]{font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;} /* Noto Sans JP には越語の声調記号がない */
+  .lang a:hover{color:var(--orange);}
 
   @media(max-width:960px){nav.gnav{display:none;}}
   /* スマホ用：ナビ非表示時だけヘッダーに出すコラムへのリンク */
@@ -501,7 +504,7 @@
       <a href="../contact.html">お問い合わせ</a>
     </nav>
     <div class="hd-right">
-      <span class="lang"><b>JA</b> / VI</span>
+      <span class="lang"><b>JA</b> / <a href="/vi/" hreflang="vi" lang="vi">VI</a></span>
       <a class="hd-col" href="../column.html">コラム</a>
       <a class="hd-cta" href="../contact.html">無料相談</a>
     </div>
@@ -598,7 +601,7 @@
     </div>
     <div class="ft-copy">
       <span>&copy; 2026 KIND ONE, K.K. All Rights Reserved.</span>
-      <a href="../privacy.html">プライバシーポリシー</a>
+      <span class="ft-links"><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="../privacy.html">プライバシーポリシー</a></span>
     </div>
   </div>
 </footer>
