@@ -121,8 +121,12 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
 .contact .wrap{display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between;padding-top:64px;padding-bottom:64px}
 .contact-text{flex:1 1 420px;display:flex;flex-direction:column;gap:12px}
 .contact-text p{margin:0;font-size:17px;line-height:1.6;color:var(--pale)}
-.contact-actions{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
-.qr{width:128px;height:128px;background:#fff;border-radius:8px;color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:center;padding:6px}
+.contact-actions{display:flex;flex-direction:column;gap:20px}
+.contact-row{display:flex;align-items:center;gap:20px}
+.contact-row-body{display:flex;flex-direction:column;gap:10px;width:180px}
+.contact-row-label{font-size:14px;font-weight:600;color:var(--pale)}
+.contact-divider{height:1px;background:rgba(255,255,255,.18)}
+.qr{flex-shrink:0;box-sizing:border-box;width:128px;height:128px;background:#fff;border-radius:8px;color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:center;padding:6px}
 .qr img{width:100%;height:100%;object-fit:contain}
 
 /* Footer */
@@ -130,8 +134,12 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
 .site-footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:24px;padding-bottom:24px}
 .site-footer a{color:var(--pale)}
 
-/* Floating Zalo */
-.float-zalo{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:8px;background:#0068FF;color:#fff;text-decoration:none;padding:14px 20px;border-radius:999px;font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+/* Floating chat buttons (LINE + Zalo) */
+.float-chat{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;flex-direction:column;gap:10px}
+.float-chat a{display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;text-decoration:none;padding:14px 20px;border-radius:999px;font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.float-line{background:#048A3C}
+.float-line:hover{color:#fff;background:#03702F}
+.float-zalo{background:#0068FF}
 .float-zalo:hover{color:#fff;background:#0052CC}
 
 /* Mobile */
@@ -150,21 +158,23 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
   .section{padding:56px 0}
   .jobs{grid-template-columns:1fr}
   .lang{display:none}
-  /* Header gọn 1 dòng: logo + nút */
-  .site-header .wrap{flex-wrap:nowrap;gap:12px;padding-top:10px;padding-bottom:10px}
-  .brand{gap:10px;min-width:0}
+  .site-header .wrap{flex-wrap:nowrap;gap:10px;padding-top:10px;padding-bottom:10px}
+  .brand{gap:8px;min-width:0}
+  .brand-mark{width:34px;height:34px;font-size:13px;flex-shrink:0}
+  .brand-name strong{font-size:16px;white-space:nowrap}
   .brand-name span{display:none}
-  .header-actions .btn-small{padding:10px 14px;font-size:14px;white-space:nowrap}
-  /* Chừa chỗ cho nút Zalo nổi để không che nút cuối danh sách / footer */
-  #jobs{padding-bottom:96px}
-  .site-footer .wrap{padding-bottom:96px}
-  .brand-name strong{white-space:nowrap}
+  #jobs{padding-bottom:136px}
+  .btn-small{padding:10px 14px;font-size:14px;white-space:nowrap}
+  .contact-actions{width:100%}
+  .contact-row-body{flex:1;width:auto}
+  .qr{width:112px;height:112px}
+  .site-footer .wrap{padding-bottom:136px}
+  .float-chat{right:16px;bottom:16px;gap:8px}
+  .float-chat a{padding:13px 18px}
 }
 @media (max-width:360px){
   .wrap{padding:0 16px}
-  .brand-mark{width:34px;height:34px;font-size:13px}
-  .brand-name strong{font-size:16px}
-  .header-actions .btn-small{padding:9px 12px;font-size:13px}
+  .btn-small{padding:9px 12px;font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){
   .hero-slides img{transition:none}
@@ -351,11 +361,24 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
   <div class="wrap">
     <div class="contact-text">
       <h2>Không thấy đơn phù hợp?</h2>
-      <p>Nhắn Zalo cho chị Vân ngành nghề và thời hạn visa — có đơn mới sẽ báo ngay. Tư vấn miễn phí.</p>
+      <p>Nhắn Zalo hoặc LINE cho chị Vân ngành nghề và thời hạn visa — có đơn mới sẽ báo ngay. Tư vấn miễn phí.</p>
     </div>
     <div class="contact-actions">
-      <div class="qr"><img src="/vi/img/zalo-qr.png" alt="Mã QR Zalo của chị Vân" width="600" height="600" loading="lazy"></div>
-      <a class="btn btn-white" href="https://zalo.me/0377999174" target="_blank" rel="noopener">Đăng ký tư vấn</a>
+      <div class="contact-row">
+        <div class="qr"><img src="/vi/img/zalo-qr.png" alt="Mã QR Zalo của chị Vân" width="600" height="600" loading="lazy"></div>
+        <div class="contact-row-body">
+          <span class="contact-row-label">Zalo</span>
+          <a class="btn btn-white" href="https://zalo.me/0377999174" target="_blank" rel="noopener">Nhắn Zalo</a>
+        </div>
+      </div>
+      <div class="contact-divider"></div>
+      <div class="contact-row">
+        <div class="qr"><img src="/vi/img/line-qr.png" alt="Mã QR LINE" width="600" height="600" loading="lazy"></div>
+        <div class="contact-row-body">
+          <span class="contact-row-label">LINE</span>
+          <a class="btn btn-white" href="https://line.me/ti/p/Ykdnjw48c4" target="_blank" rel="noopener">Nhắn LINE</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -364,15 +387,21 @@ h2{margin:0;font-size:32px;font-weight:800;line-height:1.3}
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© KIND ONE, K.K. · <a href="/privacy.html" lang="ja">プライバシーポリシー</a></span>
+    <span>© KIND ONE, K.K. · <a href="/privacy" lang="ja">プライバシーポリシー</a></span>
     <span lang="ja">無料職業紹介 34-ム-300044 · 登録支援機関 26登-013392 · 自動車運送業分野 特定技能協議会 26AT20136</span>
   </div>
 </footer>
 
-<a class="float-zalo" href="https://zalo.me/0377999174" target="_blank" rel="noopener" aria-label="Nhắn Zalo cho chị Vân">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
-  Zalo
-</a>
+<div class="float-chat">
+  <a class="float-line" href="https://line.me/ti/p/Ykdnjw48c4" target="_blank" rel="noopener" aria-label="Nhắn LINE">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+    LINE
+  </a>
+  <a class="float-zalo" href="https://zalo.me/0377999174" target="_blank" rel="noopener" aria-label="Nhắn Zalo cho chị Vân">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+    Zalo
+  </a>
+</div>
 
 <script>
 (function(){
