@@ -21,6 +21,26 @@
 <meta name="twitter:title" content="コラム｜特定技能の支援機関 カインド・ONE">
 <meta name="twitter:description" content="特定技能制度の実務や受け入れ準備について、広島の登録支援機関カインド・ONEが解説するコラム。">
 <meta name="twitter:image" content="https://www.kindvija.com/img/og-share.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://www.kindvija.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "コラム",
+      "item": "https://www.kindvija.com/column"
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --ink:#1B2A44; --ink-deep:#0F1D36; --paper:#FBFAF6; --white:#FFFFFF;
@@ -55,6 +75,8 @@
   nav.gnav a{padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s;}
   nav.gnav a:hover{border-color:var(--orange);}
   nav.gnav a.current{border-color:var(--orange);color:var(--ink);}
+  nav.gnav a{white-space:nowrap;}
+  @media(max-width:1180px){nav.gnav{gap:16px;letter-spacing:.06em;}}
   .hd-right{display:flex;align-items:center;gap:14px;}
   .lang{font-size:.7rem;letter-spacing:.14em;color:var(--slate);}
   .lang b{color:var(--ink);}
@@ -498,6 +520,7 @@
     </a>
     <nav class="gnav">
       <a href="/service">支援内容</a>
+      <a href="/support">10の支援</a>
       <a href="/service#tokutei">特定技能とは</a>
       <a href="/about">運営会社</a>
       <a href="/column" class="current">コラム</a>
@@ -512,6 +535,7 @@
 </header>
 
 <div class="wrap col-head">
+  <div class="crumb" style="margin:0 0 18px;"><a href="/">ホーム</a><span class="sep">/</span>コラム</div>
   <span class="eyebrow">COLUMN</span>
   <h1 class="serif">コラム</h1>
   <p>特定技能制度の実務、受け入れの準備、現場で起きたことなど、広島で支援をしている立場から書いています。</p>

@@ -80,6 +80,8 @@
   nav.gnav a{padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s;}
   nav.gnav a:hover{border-color:var(--orange);}
   nav.gnav a.current{border-color:var(--orange);color:var(--ink);}
+  nav.gnav a{white-space:nowrap;}
+  @media(max-width:1180px){nav.gnav{gap:16px;letter-spacing:.06em;}}
   .hd-right{display:flex;align-items:center;gap:14px;}
   .lang{font-size:.7rem;letter-spacing:.14em;color:var(--slate);}
   .lang b{color:var(--ink);}
@@ -552,6 +554,7 @@
     </a>
     <nav class="gnav">
       <a href="/service">支援内容</a>
+      <a href="/support">10の支援</a>
       <a href="/service#tokutei">特定技能とは</a>
       <a href="/about">運営会社</a>
       <a href="/column">コラム</a>

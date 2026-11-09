@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ページが見つかりません｜特定技能の支援機関 カインド・ONE</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+  :root{
+    --ink:#1B2A44; --ink-deep:#0F1D36; --paper:#FBFAF6; --white:#FFFFFF;
+    --orange:#E8681E; --slate:#66738A; --line:#E3DDD0; --placeholder:#B4530F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:2.05;letter-spacing:.05em;
+    font-feature-settings:"palt";}
+  .serif{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+  .ph{display:inline-block;border:1.5px dashed var(--placeholder);color:var(--placeholder);
+    padding:2px 10px;border-radius:4px;font-size:.82em;background:rgba(232,104,30,.05);white-space:nowrap;}
+  .ph-block{border:1.5px dashed var(--placeholder);color:var(--placeholder);
+    background:rgba(232,104,30,.04);border-radius:6px;padding:26px;text-align:center;font-size:.88rem;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(251,250,246,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .hd{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px;}
+  .brand{display:flex;flex-direction:column;line-height:1.4;}
+  .brand{flex-direction:row;align-items:center;gap:12px;}
+  .brand .logo-mark{height:34px;width:auto;display:block;}
+  .brand-txt{display:flex;flex-direction:column;line-height:1.4;}
+  .ft-brand .logo-mark{height:30px;width:auto;display:block;margin-bottom:10px;}
+
+  .brand .cat{font-size:.6rem;letter-spacing:.26em;color:var(--orange);font-weight:700;}
+  .brand .co{font-weight:600;font-size:1.2rem;letter-spacing:.16em;
+    font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;}
+  nav.gnav{display:flex;gap:26px;font-size:.8rem;font-weight:500;letter-spacing:.12em;}
+  nav.gnav a{padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s;}
+  nav.gnav a:hover{border-color:var(--orange);}
+  nav.gnav a.current{border-color:var(--orange);color:var(--ink);}
+  nav.gnav a{white-space:nowrap;}
+  @media(max-width:1180px){nav.gnav{gap:16px;letter-spacing:.06em;}}
+  .hd-right{display:flex;align-items:center;gap:14px;}
+  .lang{font-size:.7rem;letter-spacing:.14em;color:var(--slate);}
+  .lang b{color:var(--ink);}
+  .hd-cta{border:1px solid var(--ink);color:var(--ink);font-size:.78rem;font-weight:600;
+    letter-spacing:.14em;padding:10px 24px;border-radius:2px;transition:all .3s;}
+  .hd-cta:hover{background:var(--ink);color:#fff;}
+
+  .page-hero{background:var(--white);border-bottom:1px solid var(--line);padding:64px 0 44px;}
+  .page-hero .en{font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:.14em;font-weight:500;
+    font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;}
+  .page-hero .jp{font-size:.8rem;letter-spacing:.3em;color:var(--orange);font-weight:600;
+    display:block;margin-top:6px;}
+  .crumb{margin-top:22px;font-size:.72rem;color:var(--slate);letter-spacing:.1em;}
+  .crumb a{border-bottom:1px solid var(--line);}
+  .crumb a:hover{border-color:var(--orange);}
+  .crumb .sep{margin:0 10px;color:var(--line);}
+
+  section{padding:96px 0;}
+  .eyebrow{display:block;font-size:.68rem;font-weight:600;letter-spacing:.4em;
+    color:var(--orange);margin-bottom:20px;}
+  h2{font-size:clamp(1.5rem,3vw,2.05rem);font-weight:500;letter-spacing:.16em;
+    line-height:1.8;margin-bottom:24px;}
+  .sec-lead{color:var(--slate);font-size:.93rem;max-width:36em;line-height:2.2;}
+  .more-link{display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    font-size:.8rem;font-weight:600;letter-spacing:.18em;border-bottom:1px solid var(--ink);
+    padding-bottom:4px;transition:all .3s;}
+  .more-link::after{content:"\2192";color:var(--orange);}
+  .more-link:hover{border-color:var(--orange);color:var(--orange);}
+
+  .btn{display:inline-block;padding:16px 40px;border-radius:2px;font-weight:600;
+    font-size:.88rem;letter-spacing:.16em;text-align:center;transition:all .3s;}
+  .btn-fill{background:var(--ink);color:#fff;}
+  .btn-fill:hover{background:var(--orange);}
+  .btn-line{border:1px solid var(--line);color:var(--ink);}
+  .btn-line:hover{border-color:var(--ink);}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:var(--paper);}
+  .hero-inner{position:relative;display:grid;grid-template-columns:auto 1fr;gap:56px;
+    padding:92px 0 72px;align-items:center;}
+  .tate{writing-mode:vertical-rl;font-size:1.02rem;letter-spacing:.5em;color:var(--slate);
+    border-left:1px solid var(--line);padding-left:26px;height:300px;align-self:center;order:2;}
+  .hero .badge{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--orange);
+    color:var(--orange);font-size:.72rem;letter-spacing:.22em;font-weight:600;
+    padding:7px 18px;margin-bottom:26px;}
+  .hero h1{font-size:clamp(1.9rem,4.2vw,3.05rem);font-weight:500;line-height:1.8;letter-spacing:.13em;}
+  .hero h1 .dot{color:var(--orange);}
+  .hero .lead{margin-top:28px;color:var(--slate);font-size:.94rem;max-width:32em;line-height:2.2;}
+  .hero-meta{margin-top:34px;display:flex;gap:30px;flex-wrap:wrap;
+    font-size:.7rem;letter-spacing:.2em;color:var(--slate);}
+  .hero-meta span b{display:block;color:var(--ink);font-size:1rem;letter-spacing:.1em;
+    font-family:"Shippori Mincho",serif;}
+  .hero .cta-row{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;}
+  .route{border-top:1px solid var(--line);padding:22px 0 34px;position:relative;}
+  .route-line{position:relative;height:1px;
+    background:linear-gradient(90deg,var(--line),var(--orange),var(--line));margin:30px 0 12px;}
+  .route-line::before,.route-line::after{content:"";position:absolute;top:50%;
+    transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--ink);}
+  .route-line::before{left:0;}
+  .route-line::after{right:0;background:var(--orange);}
+  .route-cities{display:flex;justify-content:space-between;font-size:.72rem;
+    letter-spacing:.2em;color:var(--slate);}
+  .route-cities b{color:var(--ink);font-size:.92rem;display:block;letter-spacing:.3em;
+    font-family:"Shippori Mincho",serif;}
+  .route-mid{position:absolute;left:50%;top:8px;transform:translateX(-50%);
+    font-size:.64rem;letter-spacing:.34em;color:var(--slate);}
+
+  /* worries */
+  .worries{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .worry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;}
+  .worry{background:var(--paper);border:1px solid var(--line);border-radius:4px;
+    padding:30px 26px;position:relative;}
+  .worry::before{content:"\201C";font-family:Georgia,serif;position:absolute;top:8px;left:18px;
+    font-size:3rem;color:var(--orange);opacity:.3;line-height:1;}
+  .worry p{font-size:.95rem;font-weight:600;letter-spacing:.06em;line-height:1.9;padding-top:16px;
+    font-family:"Shippori Mincho",serif;}
+  .worry-bridge{margin-top:48px;text-align:center;}
+  .worry-bridge .big{font-size:clamp(1.15rem,2.3vw,1.5rem);font-weight:500;letter-spacing:.14em;
+    font-family:"Shippori Mincho",serif;}
+  .worry-bridge .big em{font-style:normal;border-bottom:2px solid var(--orange);padding-bottom:3px;}
+
+  /* digest cards */
+  .digest-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px;}
+  .dcard{background:var(--white);border:1px solid var(--line);border-radius:4px;
+    padding:34px 30px;transition:all .3s;position:relative;display:block;}
+  .dcard:hover{border-color:var(--orange);transform:translateY(-3px);}
+  .dcard .num{font-family:"Shippori Mincho",serif;font-size:1.6rem;color:var(--ink);
+    display:flex;align-items:center;gap:16px;margin-bottom:14px;}
+  .dcard .num::after{content:"";flex:1;height:1px;background:var(--line);}
+  .dcard .num small{font-size:.58rem;letter-spacing:.3em;color:var(--orange);font-weight:600;
+    font-family:"Noto Sans JP",sans-serif;}
+  .dcard h3{font-size:1.12rem;font-weight:500;letter-spacing:.1em;margin-bottom:8px;
+    font-family:"Shippori Mincho",serif;}
+  .dcard p{font-size:.84rem;color:var(--slate);line-height:2;}
+  .dcard .go{margin-top:14px;font-size:.72rem;letter-spacing:.2em;font-weight:600;color:var(--ink);}
+  .dcard .go::after{content:" \2192";color:var(--orange);}
+
+  /* field band */
+  .field-band{margin-top:64px;background:var(--white);border:1px solid var(--line);
+    border-radius:4px;padding:36px 38px;}
+  .field-band h3{font-size:1rem;font-weight:600;letter-spacing:.14em;margin-bottom:14px;
+    display:flex;align-items:center;gap:12px;}
+  .field-band h3::before{content:"";width:22px;height:2px;background:var(--orange);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .chips span{font-size:.76rem;letter-spacing:.08em;border:1px solid var(--line);
+    border-radius:999px;padding:5px 16px;color:var(--slate);background:var(--paper);}
+  .chips span.hot{border-color:var(--orange);color:var(--orange);font-weight:600;}
+  .field-band .note-s{margin-top:16px;font-size:.78rem;color:var(--slate);}
+
+  /* reasons */
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;}
+  .rcard{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:34px 28px;}
+  .rcard .rno{font-family:"Shippori Mincho",serif;font-size:2rem;color:var(--orange);line-height:1;}
+  .rcard h3{font-size:1.05rem;font-weight:600;letter-spacing:.08em;margin:16px 0 10px;line-height:1.8;}
+  .rcard p{font-size:.84rem;color:var(--slate);line-height:2;}
+
+  /* topics */
+  .topics{background:var(--white);border-top:1px solid var(--line);padding:56px 0;}
+  .topics-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .topics-head h2{margin-bottom:0;font-size:1.25rem;}
+  .topics-list{margin-top:26px;border-top:1px solid var(--line);}
+  .topic{display:grid;grid-template-columns:120px 110px 1fr;gap:20px;align-items:baseline;
+    padding:18px 4px;border-bottom:1px solid var(--line);font-size:.86rem;}
+  .topic .date{color:var(--slate);letter-spacing:.08em;font-size:.8rem;}
+  .topic .cat{font-size:.64rem;letter-spacing:.2em;color:var(--orange);
+    border:1px solid var(--orange);border-radius:2px;padding:2px 8px;text-align:center;font-weight:600;}
+
+  /* service detail */
+  .svc-list{margin-top:64px;display:grid;gap:0;}
+  .svc{display:grid;grid-template-columns:130px 1fr 300px;gap:44px;align-items:center;
+    padding:52px 0;border-top:1px solid var(--line);}
+  .svc:last-of-type{border-bottom:1px solid var(--line);}
+  .svc .num{font-family:"Shippori Mincho",serif;font-size:2.5rem;color:var(--ink);line-height:1;}
+  .svc .num small{display:block;font-size:.58rem;letter-spacing:.34em;color:var(--orange);
+    margin-top:10px;font-family:"Noto Sans JP",sans-serif;font-weight:600;}
+  .svc h3{font-size:1.3rem;font-weight:500;letter-spacing:.12em;margin-bottom:12px;
+    font-family:"Shippori Mincho",serif;}
+  .svc p{font-size:.88rem;color:var(--slate);line-height:2.1;}
+  .svc .items{margin-top:14px;font-size:.78rem;color:var(--slate);}
+  .svc .items span{display:inline-block;margin-right:18px;position:relative;padding-left:14px;}
+  .svc .items span::before{content:"";position:absolute;left:0;top:.9em;width:7px;height:1.5px;
+    background:var(--orange);}
+  .svc .visual{aspect-ratio:4/3;background:var(--white);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;border-radius:4px;}
+  .svc .visual .ph-block{border:none;background:none;}
+
+  /* 義務的支援10項目 */
+  .gimu{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin-top:52px;
+    list-style:none;counter-reset:g;}
+  .gimu li{position:relative;padding:16px 18px 16px 58px;background:var(--white);
+    border:1px solid var(--line);border-radius:4px;font-size:.85rem;counter-increment:g;
+    line-height:1.9;}
+  .gimu li::before{content:counter(g,decimal-leading-zero);position:absolute;left:18px;top:50%;
+    transform:translateY(-50%);font-family:"Shippori Mincho",serif;color:var(--orange);
+    font-size:1.05rem;letter-spacing:.05em;}
+
+  /* flow steps */
+  .steps{margin-top:56px;}
+  .step{display:grid;grid-template-columns:150px 1fr;gap:30px;padding:28px 0;
+    border-bottom:1px dashed var(--line);align-items:baseline;}
+  .step:first-child{border-top:1px solid var(--line);}
+  .step .no{font-family:"Shippori Mincho",serif;letter-spacing:.14em;}
+  .step .no small{display:block;font-size:.58rem;letter-spacing:.34em;color:var(--orange);
+    font-family:"Noto Sans JP",sans-serif;font-weight:600;}
+  .step .no b{font-size:1.35rem;font-weight:500;}
+  .step h3{font-size:1.02rem;font-weight:600;letter-spacing:.08em;margin-bottom:6px;}
+  .step p{font-size:.85rem;color:var(--slate);line-height:2;}
+
+  /* through band */
+  .through{background:var(--ink-deep);color:#fff;text-align:center;}
+  .through .eyebrow{color:var(--orange);}
+  .through h2{color:#fff;}
+  .through .sec-lead{margin:0 auto;color:rgba(255,255,255,.66);}
+  .flow{margin-top:60px;display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap;}
+  .fstep{width:230px;padding:36px 28px;border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.03);}
+  .fstep + .fstep{border-left:none;}
+  .fstep .en{font-size:.6rem;letter-spacing:.4em;color:var(--orange);display:block;margin-bottom:14px;}
+  .fstep .jp{font-size:1.6rem;letter-spacing:.3em;font-weight:500;font-family:"Shippori Mincho",serif;}
+  .fstep p{font-size:.8rem;color:rgba(255,255,255,.62);margin-top:14px;text-align:left;line-height:2;}
+  .through .note{margin:48px auto 0;max-width:34em;font-size:.88rem;
+    color:rgba(255,255,255,.78);line-height:2.2;}
+  .through .note em{font-style:normal;color:#fff;border-bottom:1px solid var(--orange);}
+
+  /* tokutei */
+  .tk-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px;}
+  .tk-card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:28px 26px;}
+  .tk-card h3{font-size:.98rem;font-weight:600;letter-spacing:.06em;margin-bottom:10px;
+    display:flex;align-items:center;gap:10px;}
+  .tk-card h3::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--orange);
+    flex-shrink:0;}
+  .tk-card p{font-size:.85rem;color:var(--slate);line-height:2;}
+  .tk-note{margin-top:26px;font-size:.8rem;color:var(--slate);background:var(--white);
+    border-left:3px solid var(--orange);padding:16px 22px;border-radius:0 4px 4px 0;}
+
+  /* facts */
+  .facts-band{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;
+    border:1px solid var(--line);background:var(--white);}
+  .fact{padding:40px 28px;text-align:center;border-right:1px solid var(--line);}
+  .fact:last-child{border-right:none;}
+  .fact .num{font-size:2.2rem;font-family:"Shippori Mincho",serif;line-height:1.2;}
+  .fact .num small{font-size:.88rem;color:var(--slate);margin-left:4px;}
+  .fact .label{font-size:.78rem;color:var(--slate);margin-top:10px;}
+  .work-hl{margin-top:20px;padding:32px 34px;background:var(--white);border:1px solid var(--line);
+    border-left:3px solid var(--orange);border-radius:0 4px 4px 0;}
+  .work-hl h3{font-size:1.02rem;letter-spacing:.08em;font-weight:600;margin-bottom:8px;}
+  .work-hl p{font-size:.85rem;color:var(--slate);line-height:2;}
+  .licenses{margin-top:20px;border:1px solid var(--line);background:var(--white);}
+  .license-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:18px 28px;
+    font-size:.88rem;border-bottom:1px solid var(--line);}
+  .license-row:last-child{border-bottom:none;}
+  .license-row .lname{font-weight:600;min-width:15em;letter-spacing:.06em;}
+
+  /* philosophy / greeting / history / company */
+  .philosophy{background:var(--paper);text-align:center;}
+  .philosophy .statement{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:500;
+    letter-spacing:.2em;line-height:2;}
+  .philosophy .statement em{font-style:normal;border-bottom:2px solid var(--orange);padding-bottom:4px;}
+  .philosophy p.body{margin:42px auto 0;max-width:36em;color:var(--slate);
+    font-size:.93rem;line-height:2.4;text-align:left;}
+  .keywords{margin-top:52px;display:flex;justify-content:center;flex-wrap:wrap;}
+  .kw{padding:0 44px;border-right:1px solid var(--line);}
+  .kw:last-child{border-right:none;}
+  .kw b{display:block;font-size:1.25rem;letter-spacing:.24em;font-weight:500;
+    font-family:"Shippori Mincho",serif;}
+  .kw span{font-size:.64rem;letter-spacing:.3em;color:var(--orange);}
+  .greet-grid{display:grid;grid-template-columns:260px 1fr;gap:56px;margin-top:52px;align-items:start;}
+  .greet-photo{aspect-ratio:3/4;display:flex;}
+  .greet-photo .ph-block{width:100%;display:flex;align-items:center;justify-content:center;}
+  .greet-body p{color:var(--slate);font-size:.93rem;margin-bottom:1.4em;line-height:2.3;}
+  .greet-sign{margin-top:32px;display:flex;align-items:baseline;gap:20px;}
+  .greet-sign .title{font-size:.76rem;color:var(--slate);letter-spacing:.14em;}
+  .greet-sign .name{font-size:1.25rem;letter-spacing:.3em;font-family:"Shippori Mincho",serif;}
+  .history{margin-top:52px;border-left:1px solid var(--line);padding-left:40px;display:grid;gap:30px;}
+  .hitem{position:relative;}
+  .hitem::before{content:"";position:absolute;left:-45px;top:.7em;width:9px;height:9px;
+    border-radius:50%;background:var(--orange);}
+  .hitem .year{font-family:"Shippori Mincho",serif;font-size:1.2rem;letter-spacing:.12em;}
+  .hitem p{font-size:.88rem;color:var(--slate);}
+  .company-table{width:100%;border-collapse:collapse;margin-top:52px;background:var(--white);
+    border:1px solid var(--line);font-size:.9rem;}
+  .company-table th,.company-table td{padding:20px 26px;border-bottom:1px solid var(--line);
+    text-align:left;vertical-align:top;}
+  .company-table tr:last-child th,.company-table tr:last-child td{border-bottom:none;}
+  .company-table th{width:200px;font-weight:600;letter-spacing:.16em;white-space:nowrap;
+    color:var(--ink);background:var(--paper);}
+  .biz-list{columns:2;column-gap:40px;font-size:.84rem;color:var(--slate);list-style:none;}
+  .biz-list li{padding:4px 0 4px 18px;position:relative;break-inside:avoid;}
+  .biz-list li::before{content:"";position:absolute;left:0;top:1em;width:8px;height:1.5px;
+    background:var(--orange);}
+  .biz-list li.primary{color:var(--ink);font-weight:600;}
+
+  /* contact */
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px;}
+  .way{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:26px 26px;}
+  .way h3{font-size:.9rem;font-weight:600;letter-spacing:.1em;margin-bottom:8px;}
+  .way p{font-size:.78rem;color:var(--slate);line-height:2;}
+  .way .big-ph{margin-top:10px;}
+  .cform{background:var(--white);border:1px solid var(--line);border-radius:4px;
+    padding:44px 42px;margin-top:24px;}
+  .cform h3{font-size:1.05rem;font-weight:600;letter-spacing:.14em;margin-bottom:26px;
+    font-family:"Shippori Mincho",serif;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:.8rem;font-weight:600;letter-spacing:.1em;margin-bottom:8px;}
+  .field label .req{color:#fff;background:var(--orange);font-size:.6rem;border-radius:2px;
+    padding:2px 7px;margin-left:10px;vertical-align:middle;letter-spacing:.12em;}
+  .field input,.field select,.field textarea{width:100%;padding:13px 15px;
+    border:1px solid var(--line);border-radius:2px;font-size:.92rem;font-family:inherit;
+    background:var(--paper);color:var(--ink);}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;
+    border-color:var(--orange);background:#fff;}
+  .field textarea{min-height:120px;resize:vertical;}
+  .cform .submit{width:100%;background:var(--ink);color:#fff;border:none;cursor:pointer;
+    padding:17px;border-radius:2px;font-size:.92rem;font-weight:600;letter-spacing:.2em;
+    font-family:inherit;transition:background .3s;}
+  .cform .submit:hover{background:var(--orange);}
+  .form-note{display:none;margin-top:16px;font-size:.82rem;color:var(--placeholder);
+    border:1.5px dashed var(--placeholder);border-radius:4px;padding:14px 16px;
+    background:rgba(232,104,30,.04);}
+  .privacy-line{font-size:.76rem;color:var(--slate);margin:6px 0 20px;}
+
+  .cta-band{background:var(--ink-deep);color:#fff;text-align:center;padding:84px 0;}
+  .cta-band .eyebrow{color:var(--orange);}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:rgba(255,255,255,.66);font-size:.92rem;max-width:34em;margin:0 auto;line-height:2.2;}
+  .cta-band .cta-row{margin-top:42px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .cta-band .btn-fill{background:var(--orange);}
+  .cta-band .btn-fill:hover{background:#f07c38;}
+
+  footer{background:var(--ink-deep);color:rgba(255,255,255,.55);padding:56px 0 40px;font-size:.78rem;}
+  .ft-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:36px;
+    padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.14);}
+  .ft-brand .cat{font-size:.62rem;letter-spacing:.26em;color:#f0a06a;font-weight:600;display:block;}
+  .ft-brand .co{color:#fff;font-weight:600;letter-spacing:.2em;font-size:1.1rem;
+    font-family:"Shippori Mincho",serif;display:block;margin-top:2px;}
+  .ft-brand p{margin-top:14px;font-size:.72rem;line-height:2;}
+  .ft-col h4{color:#fff;font-size:.72rem;letter-spacing:.24em;font-weight:600;margin-bottom:14px;}
+  .ft-col a{display:block;padding:3px 0;font-size:.74rem;letter-spacing:.06em;transition:color .25s;}
+  .ft-col a:hover{color:#fff;}
+  .ft-other{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);
+    display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;}
+  .ft-other-lead{font-size:.68rem;letter-spacing:.24em;color:var(--orange);}
+  .ft-other-items{display:flex;gap:28px;flex-wrap:wrap;}
+  .ft-other-link{font-size:.85rem;color:rgba(255,255,255,.86);
+    border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:3px;}
+  @media(max-width:700px){.ft-other{flex-direction:column;gap:14px;}
+    .ft-other-items{flex-direction:column;gap:12px;}}
+  .ft-licenses{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0;}
+  .ft-badge{border:1px solid rgba(255,255,255,.22);padding:9px 16px;font-size:.68rem;
+    letter-spacing:.08em;display:flex;flex-direction:column;gap:2px;border-radius:2px;}
+  .ft-badge b{color:#fff;}
+  .ft-badge .ph{border-color:rgba(232,104,30,.6);color:#f0a06a;background:none;font-size:.68rem;}
+  .ft-copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.7rem;}
+  .ft-copy a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:color .25s;}
+  .ft-copy a:hover{color:#fff;}
+  .ft-links{display:flex;gap:22px;flex-wrap:wrap;}
+  a[lang="vi"]{font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;} /* Noto Sans JP には越語の声調記号がない */
+  .lang a:hover{color:var(--orange);}
+
+  @media(max-width:960px){nav.gnav{display:none;}}
+  /* スマホ用：ナビ非表示時だけヘッダーに出すコラムへのリンク */
+  .hd-col{display:none;font-size:.74rem;font-weight:600;letter-spacing:.12em;color:var(--ink);
+    padding:2px 0;border-bottom:1px solid var(--orange);white-space:nowrap;}
+  @media(max-width:960px){.hd-col{display:inline-block;}}
+  @media(max-width:860px){
+    section{padding:72px 0;}
+    .hero-inner{grid-template-columns:1fr;padding:60px 0 50px;}
+    .tate{writing-mode:horizontal-tb;height:auto;border-left:none;border-top:1px solid var(--line);
+      padding:18px 0 0;letter-spacing:.34em;font-size:.84rem;order:2;}
+    .worry-grid{grid-template-columns:1fr;}
+    .digest-grid{grid-template-columns:1fr;}
+    .rgrid{grid-template-columns:1fr;}
+    .topic{grid-template-columns:1fr;gap:6px;}
+    .kw{padding:14px 0;border-right:none;border-bottom:1px solid var(--line);width:100%;text-align:center;}
+    .kw:last-child{border-bottom:none;}
+    .svc{grid-template-columns:1fr;gap:20px;padding:40px 0;}
+    .svc .visual{max-width:340px;}
+    .gimu{grid-template-columns:1fr;}
+    .step{grid-template-columns:1fr;gap:8px;}
+    .flow{flex-direction:column;align-items:center;}
+    .fstep{width:100%;max-width:340px;}
+    .fstep + .fstep{border-left:1px solid rgba(255,255,255,.18);border-top:none;}
+    .tk-grid{grid-template-columns:1fr;}
+    .facts-band{grid-template-columns:1fr;}
+    .fact{border-right:none;border-bottom:1px solid var(--line);}
+    .fact:last-child{border-bottom:none;}
+    .greet-grid{grid-template-columns:1fr;}
+    .greet-photo{max-width:240px;}
+    .company-table th{width:120px;}
+    .biz-list{columns:1;}
+    .ways{grid-template-columns:1fr;}
+    .cform{padding:32px 24px;}
+    .ft-grid{grid-template-columns:1fr;gap:24px;}
+  }
+  /*sp-fix*/
+  @media(max-width:640px){
+    .hd{height:64px;}
+    .brand .cat{font-size:.52rem;}
+    .brand .co{font-size:1rem;letter-spacing:.1em;}
+    .lang{display:none;}
+    .hd-cta{padding:8px 10px;font-size:.7rem;letter-spacing:.08em;white-space:nowrap;}
+    /* コラムリンク追加分の幅を確保 */
+    .hd{padding-left:16px;padding-right:16px;gap:10px;}
+    .brand{gap:8px;}
+    .brand .logo-mark{height:28px;}
+    .brand-txt{white-space:nowrap;}
+    .hd-right{gap:10px;}
+    .hd-col{font-size:.7rem;letter-spacing:.08em;}
+    .hero h1{font-size:1.62rem;}
+    .page-hero .en{font-size:1.6rem;}
+  }
+
+  .img-slot{width:100%;height:100%;background:#EDE8DD;
+    display:flex;align-items:center;justify-content:center;}
+  .img-slot svg{opacity:.75;}
+  .qr-row{margin-top:12px;display:flex;align-items:center;gap:14px;}
+  .qr-slot{width:96px;height:96px;border:1px solid var(--line);border-radius:4px;
+    overflow:hidden;flex-shrink:0;}
+
+  /* privacy policy */
+  .policy{max-width:780px;}
+  .policy-intro{font-size:.93rem;line-height:2.3;}
+  .policy-intro a{border-bottom:1px solid var(--line);}
+  .policy-intro a:hover{border-color:var(--orange);}
+  .policy-sec{margin-top:48px;padding-top:36px;border-top:1px solid var(--line);}
+  .policy-sec h3{font-size:1.12rem;font-weight:500;letter-spacing:.1em;line-height:1.8;
+    margin-bottom:14px;font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;}
+  .policy-sec h3 .no{color:var(--orange);margin-right:6px;}
+  .policy-sec p{font-size:.9rem;line-height:2.2;margin-bottom:.9em;}
+  .policy-sec p:last-child{margin-bottom:0;}
+  .policy-list{list-style:none;margin:0 0 .9em;}
+  .policy-list:last-child{margin-bottom:0;}
+  .policy-list li{font-size:.9rem;line-height:2.1;padding-left:2.1em;text-indent:-2.1em;}
+  .policy-contact{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--orange);
+    border-radius:0 4px 4px 0;padding:24px 28px;font-size:.9rem;line-height:2.2;}
+  .policy-contact .ttl{font-weight:600;letter-spacing:.08em;}
+  .policy-contact a{border-bottom:1px solid var(--line);}
+  .policy-contact a:hover{border-color:var(--orange);}
+  .policy-date{margin-top:52px;padding-top:28px;border-top:1px solid var(--line);
+    text-align:right;font-size:.86rem;color:var(--slate);}
+  @media(max-width:640px){.policy-contact{padding:20px 20px;}}
+  .nf-links{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .nf-links a{display:block;padding:16px 20px;background:var(--white);border:1px solid var(--line);
+    border-radius:4px;font-size:.86rem;letter-spacing:.08em;transition:border-color .25s;}
+  .nf-links a:hover{border-color:var(--orange);}
+  @media(max-width:700px){.nf-links{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="/">
+      <img class="logo-mark" src="/img/logo-kindone.webp" alt="カインド・ONE ロゴ">
+      <span class="brand-txt">
+        <span class="cat">特定技能 登録支援機関</span>
+        <span class="co">カインド・ONE</span>
+      </span>
+    </a>
+    <nav class="gnav">
+      <a href="/service">支援内容</a>
+      <a href="/support">10の支援</a>
+      <a href="/service#tokutei">特定技能とは</a>
+      <a href="/about">運営会社</a>
+      <a href="/column">コラム</a>
+      <a href="/contact">お問い合わせ</a>
+    </nav>
+    <div class="hd-right">
+      <span class="lang"><b>JA</b> / <a href="/vi/" hreflang="vi" lang="vi">VI</a></span>
+      <a class="hd-col" href="/column">コラム</a>
+      <a class="hd-cta" href="/contact">無料相談</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="en serif">404 NOT FOUND</div>
+    <span class="jp">ページが見つかりません</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="sec-lead">お探しのページは、移動または削除された可能性があります。<br>URLをご確認のうえ、トップページまたは下記のメニューからお探しください。</p>
+    <div style="margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;">
+      <a class="btn btn-fill" href="/">トップページへ戻る</a>
+      <a class="btn btn-line" href="/contact">無料相談・お問い合わせ</a>
+    </div>
+    <nav class="nf-links" aria-label="メインメニュー">
+      <a href="/service">支援内容</a>
+      <a href="/support">10の支援</a>
+      <a href="/service#tokutei">特定技能とは</a>
+      <a href="/about">運営会社</a>
+      <a href="/column">コラム</a>
+      <a href="/contact">お問い合わせ</a>
+    </nav>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img class="logo-mark" src="/img/logo-kindone-white.webp" alt="">
+        <span class="cat">特定技能 登録支援機関</span>
+        <span class="co">カインド・ONE</span>
+        <p>運営：株式会社カインド・ONE<br>〒731-0113 広島県広島市安佐南区西原5丁目20番2-1201号<br>TEL：082-962-8020</p>
+      </div>
+      <div class="ft-col">
+        <h4>支援内容</h4>
+        <a href="/service#s01">受け入れ準備・制度のご案内</a>
+        <a href="/service#s02">人材のご紹介</a>
+        <a href="/service#s03">申請・入国手続き</a>
+        <a href="/service#s04">入社後の定着支援</a>
+        <a href="/support">10の支援の詳細</a>
+        <a href="/service#flow">受け入れまでの流れ</a>
+        <a href="/service#tokutei">特定技能とは</a>
+      </div>
+      <div class="ft-col">
+        <h4>運営会社</h4>
+        <a href="/about#philosophy">私たちの想い</a>
+        <a href="/about#message">代表挨拶</a>
+        <a href="/about#history">沿革</a>
+        <a href="/about#company">会社概要</a>
+        <a href="/column">コラム</a>
+      </div>
+      <div class="ft-col">
+        <h4>お問い合わせ</h4>
+        <a href="/contact">無料相談・お問い合わせ</a>
+        <a href="/contact">電話・LINE</a>
+      </div>
+    </div>
+    <div class="ft-other">
+      <span class="ft-other-lead">関連サービス</span>
+      <div class="ft-other-items">
+        <span class="ft-other-link">医療ツーリズムはこちら →</span>
+        <span class="ft-other-link">車貸し出しはこちら →</span>
+      </div>
+    </div>
+    <div class="ft-licenses">
+      <div class="ft-badge"><b>登録支援機関</b><span>登録番号：26登-013392</span></div>
+      <div class="ft-badge"><b>無料職業紹介事業</b><span>許可番号：34-ム-300044</span></div>
+      <div class="ft-badge"><b>自動車運送業分野 特定技能協議会</b><span>構成員番号：26AT20136</span></div>
+    </div>
+    <div class="ft-copy">
+      <span>&copy; 2026 KIND ONE, K.K. All Rights Reserved.</span>
+      <span class="ft-links"><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/privacy">プライバシーポリシー</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

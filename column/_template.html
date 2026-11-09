@@ -21,6 +21,32 @@
 <meta name="twitter:title" content="記事タイトル｜カインド・ONE">
 <meta name="twitter:description" content="記事の説明文をここに。">
 <meta name="twitter:image" content="https://www.kindvija.com/img/og-share.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://www.kindvija.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "コラム",
+      "item": "https://www.kindvija.com/column"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "記事タイトル",
+      "item": "https://www.kindvija.com/column/ファイル名"
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --ink:#1B2A44; --ink-deep:#0F1D36; --paper:#FBFAF6; --white:#FFFFFF;
@@ -55,6 +81,8 @@
   nav.gnav a{padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s;}
   nav.gnav a:hover{border-color:var(--orange);}
   nav.gnav a.current{border-color:var(--orange);color:var(--ink);}
+  nav.gnav a{white-space:nowrap;}
+  @media(max-width:1180px){nav.gnav{gap:16px;letter-spacing:.06em;}}
   .hd-right{display:flex;align-items:center;gap:14px;}
   .lang{font-size:.7rem;letter-spacing:.14em;color:var(--slate);}
   .lang b{color:var(--ink);}
@@ -498,6 +526,7 @@
     </a>
     <nav class="gnav">
       <a href="/service">支援内容</a>
+      <a href="/support">10の支援</a>
       <a href="/service#tokutei">特定技能とは</a>
       <a href="/about">運営会社</a>
       <a href="/column" class="current">コラム</a>
@@ -517,6 +546,7 @@
   1. このファイルをコピーして column/YYYY-MM-スラッグ.html にリネーム
   2. <head> を書き換え：<title>、description、canonical、og:url、og:title、og:description、
      twitter:title、twitter:description（URLはすべて https://www.kindvija.com/column/ファイル名 ※.html は付けない）
+     パンくず：<head> の BreadcrumbList（3件目の name と item）と、本文先頭の .crumb の「記事タイトル」も書き換える
   3. 下の日付・タグ・見出し・本文を書き換え
   4. column.html の <div class="col-list"> にカードを1ブロック追加
      （1本目のときは .col-empty の「記事を準備中です」を削除）
@@ -526,6 +556,7 @@
   ============================================================
 -->
 <article class="art">
+  <div class="crumb" style="margin:0 0 18px;"><a href="/">ホーム</a><span class="sep">/</span><a href="/column">コラム</a><span class="sep">/</span>記事タイトル</div>
   <div class="col-meta">
     <span class="col-date">2026.00.00</span>
     <span class="col-tag">カテゴリ</span>
