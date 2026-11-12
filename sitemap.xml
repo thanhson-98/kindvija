@@ -38,8 +38,14 @@
   </url>
   <url>
     <loc>https://www.kindvija.com/column</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kindvija.com/column/2026-11-jidosha-unso-yoken</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
